@@ -1,0 +1,44 @@
+nav {
+    height: auto;
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.prev_button {
+    border: none;
+    display: flex;
+    float: left;
+    width: 30px;
+    height: 30px;
+    background: url('/public/images/main/prev_arrow.png');
+}
+
+.next_button {
+    border: none;
+    display: flex;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: url('/public/images/main/next_arrow.png');
+}
+
+.page_button {
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin: 12px 12px;
+    background: #5E4C41;;
+}
+
+[aria-current]:not([aria-current="false"]) {
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin: 12px 12px;
+    background: #F3E4B7;
+}
