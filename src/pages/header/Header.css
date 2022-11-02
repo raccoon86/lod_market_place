@@ -1,58 +1,59 @@
 .menu {
-padding-top: 8px;
-font-family: 'Noto Sans CJK KR';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 21px;
-/* identical to box height */
-
-display: flex;
-justify-content: center;
-justify-items: center;
-align-items: center;
-text-align: center;
-text-transform: uppercase;
-color: #FFFFFF;
+  width: 100%;
+  padding-top: 8px;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .logo {
-    width: 189px;
-    height: 65px;
-    background: url('/public/images/menu/logo.png');
-    background-repeat : no-repeat;
-    background-size : cover;
-    margin-right: 22px;
+  width: 189px;
+  height: 65px;
+  background: url("/public/images/menu/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 22px;
 }
 
 .marketplace {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .comming {
-    width: 67px;
-    white-space:normal;
-    margin-right: 50px;
-    color: rgba(255, 255, 255, 0.6);
+  width: 67px;
+  white-space: normal;
+  margin-right: 50px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .game {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .document {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .inventory {
-    margin-right: 100px;
+  margin-right: 100px;
 }
 
 .wallet {
-    width: 180px;
-    height: 42px;
-    background: url('/public/images/menu/btn_wallet.png');
-    background-repeat : no-repeat;
-    background-size : cover;
+  width: 180px;
+  height: 42px;
+  background: url("/public/images/menu/btn_wallet.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
