@@ -1,35 +1,50 @@
 @font-face {
-    font-family: "ITC New Baskerville";
-    src: url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.eot");
-    src: url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.eot?#iefix") format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.woff2") format("woff2"),
-    url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.woff") format("woff"),
-    url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.ttf") format("truetype"),
-    url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.svg#ITC New Baskerville") format("svg");
-  }
-
-body {
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
-    /* identical to box height */
-    
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
+  font-family: "ITC New Baskerville";
+  src: url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.eot");
+  src: url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/501ade6e29baa5c62c15ec28f3ed2c62.svg#ITC New Baskerville")
+      format("svg");
 }
 
-  
+body {
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  /* display: flex;
+    justify-content: center;
+    justify-items: center; */
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
 html {
   background: #181818;
 }
-
-
+.container {
+  width: 100%;
+  padding: 90px 0;
+  max-width: 1180px;
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 * {
   padding: 0;
   margin: 0;
