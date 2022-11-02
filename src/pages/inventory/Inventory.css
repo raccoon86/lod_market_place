@@ -1,0 +1,182 @@
+input[type="radio"] {
+    display: none;
+  }
+
+.inventory_container {
+    width: 100vw;
+    height: auto;
+    background: linear-gradient(360deg, #0B0E1C 13.27%, rgba(11, 14, 28, 0) 100%), url('/public/images/inventory/bg_inventory.png');
+    background-size : 100%, 100%, cover;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.my_nft_msg {
+    margin-top: 100px;
+    justify-content: center;
+    justify-items: center;
+    font-family: 'ITC New Baskerville';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 55px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFDF6;
+    
+    text-shadow: 0px 0px 40px rgba(255, 196, 82, 0.25), 0px 0px 20px #FFC452;
+}
+
+.inventory_container .my_nft_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    height: 100%;
+    width: 100%;
+}
+
+.inventory_container .my_nft_container .my_nft_list_section {
+    height: auto;
+    width: 270px;
+    background: #161929;
+    border-radius: 20px;
+    padding: 30px;
+    margin-right: 20px;
+}
+
+input[id='ch_my_nft'] + label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(90deg, #272C3E 0%, #1F2333 100%);
+    border-radius: 10px;
+}
+
+input[id='ch_my_nft'] + label .my_nft_title {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+
+input[id='ch_my_nft']:checked + label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background: url('/public/images/inventory/bg_active.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+input[id='ch_my_nft']:checked + label .my_nft_title {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #E8E6DF;
+    text-shadow: 0px 0px 40px rgba(255, 196, 82, 0.25), 0px 0px 20px #FFC452;
+}
+
+input[id='ch_my_nft_list'] + label {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(90deg, #272C3E 0%, #1F2333 100%);
+    border-radius: 10px;
+}
+
+input[id='ch_my_nft_list'] + label .my_nft_list_title {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+
+input[id='ch_my_nft_list']:checked + label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background: url('/public/images/inventory/bg_active.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+input[id='ch_my_nft_list']:checked + label .my_nft_list_title {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #E8E6DF;
+    text-shadow: 0px 0px 40px rgba(255, 196, 82, 0.25), 0px 0px 20px #FFC452;
+}
+
+input[id='ch_activity'] + label {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(90deg, #272C3E 0%, #1F2333 100%);
+    border-radius: 10px;
+}
+
+input[id='ch_activity'] + label .activity_title {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+
+input[id='ch_activity']:checked + label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background: url('/public/images/inventory/bg_active.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+input[id='ch_activity']:checked + label .activity_title {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #E8E6DF;
+    text-shadow: 0px 0px 40px rgba(255, 196, 82, 0.25), 0px 0px 20px #FFC452;
+}

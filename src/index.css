@@ -23,3 +23,14 @@ body {
     text-align: center;
     color: #FFFFFF;
 }
+
+  
+html {
+  background: #181818;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+}

@@ -1,24 +1,13 @@
 
-* {
-    padding: 0;
-    margin: 0;
-  }
-  
-html {
-    background: #181818;
-  }
-
-body {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(360deg, #4abf73 13.27%, rgb(147, 94, 30) 100%), url('/public/images/main/login_03_fin.png');
-    background-size : 100%, 100%, 100%, 1440px;
-    background-repeat: no-repeat, no-repeat;
-  }
-
 .main {
-    height: 100%;
-    width: 100%;
+  width: 100vw;
+  height: auto;
+  background: linear-gradient(360deg, #0B0E1C 13.27%, rgba(11, 14, 28, 0) 100%), url('/public/images/main/login_03_fin.png');
+  background-size : 100%, 100%, cover;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 } 
 
 .detail_card_section {
@@ -29,6 +18,7 @@ body {
   flex-direction: column;
   justify-content: center;
   justify-items: center;
+  margin-bottom: 300px;
 }
 
 .back_section {
@@ -65,22 +55,29 @@ body {
   height: 590px;
   background: url('/public/images/card/card_01.png');
   background-repeat: no-repeat;
-  background-size: 100%, 100%;
+  background-size: cover;
 }
 
 .detail_character_info {
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
   padding: 40px;
 }
 
+.character_name_section {
+  display: flex;
+}
+
 .character_name_section .name {
+  align-items: flex-start;
   font-family: 'ITC New Baskerville';
   font-style: normal;
   font-weight: 500;
   font-size: 34px;
   line-height: 42px;
-
+  margin-right: 10px;
   color: #D3CBAF;
 }
 
@@ -91,4 +88,154 @@ body {
   line-height: 42px;
 
   color: #ffffff;
+}
+
+.wallet_section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.wallet_section .wallet_title {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #9EA2B3;
+}
+
+.wallet_section .wallet_address_section {
+  display: flex;
+  margin-top: 12px;
+  align-items: center;
+  padding: 20px;
+  height: 20px;
+  width: 95%;
+  margin-right: 40px;
+  background: #161929;
+  border-radius: 10px;
+}
+
+.wallet_section .wallet_address_section .address_name {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 500; 
+  font-size: 18px;
+  line-height: 27px;
+  margin-right: 18px;
+}
+
+.wallet_section .wallet_address_section .address {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: #B4BBDE;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.attribute_section {
+  height: 50px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.attribute_section .attribute_title {
+  height: 50px;
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #9EA2B3;
+  margin-right: 17px;
+  display: table-cell;
+  padding-top: 20px;
+}
+
+.attribute_section .attribute_level{
+  width: 100px;
+  height: 50px;
+  background: url('/public/images/detail/level_e.png');
+  background-size: 100px, 32px;
+}
+
+.listing_price_section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.listing_price_section .price_title {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #9EA2B3;
+}
+
+.listing_price_section .price_section {
+  display: flex;
+  margin-top: 12px;
+  align-items: center;
+  padding: 20px;
+  height: 40px;
+  width: 95%;
+  margin-right: 40px;
+  background: #161929;
+  border-radius: 10px;
+}
+
+.listing_price_section .price_section .coin {
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+  margin-right: 15px;
+  background: url('/public/images/detail/coin.png');
+  background-repeat: no-repeat;
+}
+
+.listing_price_section .price_section .price {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #FFFFFF;
+}
+
+.listing_price_section .price_info {
+  margin-top: 14px;
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #575D73;
+}
+
+.button_buy_section {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.button_buy_section .button_buy{
+  width: 280px;
+  height: 55px;
+  background: url('/public/images/detail/button_buy.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
