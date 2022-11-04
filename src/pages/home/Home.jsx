@@ -357,21 +357,33 @@ export default function Home() {
             Here you can search and buy item to enrich your collection
           </span>
           <div className="nft_info_section">
-            <div className="floor_price">
-              <span className="title">Floor Price</span>
-              <span className="price">150 BUSD</span>
+            <div className="floor_price nft_info_content">
+              <img src="/images/main/left_box.png" alt="left_box" />
+              <div className="nft_info_wrap">
+                <span className="title">Floor Price</span>
+                <span className="price">150 BUSD</span>
+              </div>
             </div>
-            <div className="total_volume">
-              <span className="title">Total Volume</span>
-              <span className="price">150 BUSD</span>
+            <div className="total_volume nft_info_content">
+              <img src="/images/main/left_box.png" alt="left_box" />
+              <div className="nft_info_wrap">
+                <span className="title">Total Volume</span>
+                <span className="price">150 BUSD</span>
+              </div>
             </div>
-            <div className="highest_sell_price">
-              <span className="title">Highest Sell Price</span>
-              <span className="price">150 BUSD</span>
+            <div className="highest_sell_price nft_info_content">
+              <img src="/images/main/left_box.png" alt="left_box" />
+              <div className="nft_info_wrap">
+                <span className="title">Highest Sell Price</span>
+                <span className="price">150 BUSD</span>
+              </div>
             </div>
-            <div className="total_listed_count">
-              <span className="title">Total Listed Count</span>
-              <span className="price">150 BUSD</span>
+            <div className="total_listed_count nft_info_content">
+              <img src="/images/main/right_box.png" alt="left_box" />
+              <div className="nft_info_wrap">
+                <span className="title">Total Listed Count</span>
+                <span className="price">150 BUSD</span>
+              </div>
             </div>
           </div>
           <div className="main_container">
@@ -491,9 +503,7 @@ export default function Home() {
                     onChange={handleSelect}
                     value={Selected}
                   >
-                    <option value="recent">
-                      Recent
-                    </option>
+                    <option value="recent">Recent</option>
                     <option value="oldest">Oldest</option>
                     <option value="high">Low to High</option>
                     <option value="low">High to Low</option>

@@ -19,6 +19,7 @@ body {
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
+  overflow-x: hidden;
   /* identical to box height */
 
   /* display: flex;
@@ -49,4 +50,22 @@ html {
 * {
   padding: 0;
   margin: 0;
+}
+img {
+  display: block;
+}
+@media all and (max-width: 1179px) {
+  .container {
+    width: 100%;
+    padding: 0px 20px;
+    max-width: 728px;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
