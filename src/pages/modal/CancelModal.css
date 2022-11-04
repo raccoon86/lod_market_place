@@ -1,0 +1,51 @@
+.modal_section .modal_wrap .modal_body {
+    display: flex;
+    height: 445px;
+    padding-top: 0px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.modal_section .modal_wrap .modal_body .button_400 {
+    margin-top: 66px;
+}
+
+
+.button_400 {
+    width: 400px;
+    height: 74px;
+    display: flex;
+    margin-top: 30px;
+}
+  
+.button_400 .button_400_bg {
+    position: relative;
+    width: 100%;
+    height: 74px;
+    top: 2px;
+    background: #B2A170;
+    border-radius: 10px;
+  }
+
+.button_400 .button_400_body {
+    position: absolute;
+    width: 400px;
+    height: 72px;
+    background: #F1E4B6;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.button_400 .button_400_body .button_280_text {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  color: #472716;
+}

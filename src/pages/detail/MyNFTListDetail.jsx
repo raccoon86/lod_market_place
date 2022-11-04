@@ -1,9 +1,9 @@
-import './MyNFTDetail.css';
+import './MyNFTListDetail.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import Modal from "../modal/SellModal";
+import Modal from "../modal/CancelModal";
 
 function MyNFTListDetail() {
 
@@ -18,7 +18,7 @@ function MyNFTListDetail() {
     };
   
     const navToInventory = () => {
-      navigator("/inventory", {tab : "my_nft_list"});
+      navigator("/inventory", {state : {"tab" : "my_nft_list"}});
     }
   return (
 <div className="main">
@@ -37,7 +37,7 @@ function MyNFTListDetail() {
               <div className="detail_character_info">
                 <div className="character_name_section">
                   <span className="name">#Storm Crow</span>
-                  <span className="code_number">#1-#10000</span>
+                  <span className="code_number">#9560</span>
                 </div>
                 <div className="wallet_section">
                   <span className="wallet_title">Wallet Address</span>
@@ -52,24 +52,23 @@ function MyNFTListDetail() {
                   <span className="attribute_title">Attributes</span>
                   <div className="attribute_level" />
                 </div>
-                <div className="listing_price_section">
+                <div className="nft_listing_price_section">
                   <span className="price_title">Listing Price</span>
                   <div className="price_section">
+                    <div className='icon_coin'/>
                     <div className='price'>2,000</div>
-                    <div className="coin_section">
-                        <div className='line'/>
-                        <div className='icon_coin'/>
-                        <span className='unit'>BUSD</span>
-                        <div className='arrow'/>
-                    </div>
                   </div>
                   <span className="price_info">
-                    3% transaction fee will be paid when the sale is comleted.
+                    Marketplace will receive a 3% commission.
                   </span>
                 </div>
                 <React.Fragment>
-                  <div className="button_sell_section">
-                    <div onClick={ openModal } className="button_sell" />
+                  <div className="button_280">
+                    <div className="button_280_bg">
+                    </div>
+                    <div onClick={ openModal } className='button_280_body'>
+                      <span className='button_280_text'>Cancel sale</span>
+                    </div>
                   </div>
                   <Modal open={modalOpen} close={closeModal} header="Modal heading"/>
                 </React.Fragment>

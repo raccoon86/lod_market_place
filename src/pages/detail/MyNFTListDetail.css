@@ -166,7 +166,7 @@
     background-size: 100px, 32px;
   }
   
-  .listing_price_section {
+  .nft_listing_price_section {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -174,7 +174,7 @@
     align-items: flex-start;
   }
   
-  .listing_price_section .price_title {
+  .nft_listing_price_section .price_title {
     font-family: "Noto Sans CJK KR";
     font-style: normal;
     font-weight: 400;
@@ -183,11 +183,11 @@
     color: #9ea2b3;
   }
   
-  .listing_price_section .price_section {
+  .nft_listing_price_section .price_section {
     display: flex;
     margin-top: 12px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 20px;
     height: 40px;
     width: 95%;
@@ -196,7 +196,7 @@
     border-radius: 10px;
   }
   
-  .listing_price_section .price_section .price {
+  .nft_listing_price_section .price_section .price {
     font-family: "Noto Sans CJK KR";
     font-style: normal;
     font-weight: 700;
@@ -204,45 +204,15 @@
     line-height: 36px;
     color: #ffffff;
   }
-  
-  .listing_price_section .price_section .coin_section {
-    display: flex;
-    align-items: center;
-  }
 
-  
-  .listing_price_section .price_section .coin_section .line  {
-    width: 2px;
-    height: 40px;
-    background: url('/public/images/detail/line.png') no-repeat center/cover; 
-    margin-right: 30px;
-  }
-  .listing_price_section .price_section .coin_section .icon_coin{
+  .nft_listing_price_section .price_section .icon_coin{
     width: 24px;
     height: 24px;
     margin-right: 8px;
     background: url("/public/images/game/ic_token.png") no-repeat center/cover;
   }
 
-  .listing_price_section .price_section .coin_section .unit{
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    color: #FFFFFF;
-    margin-right: 10px;
-  }
-
-  .listing_price_section .price_section .coin_section .arrow{
-    width: 12px;
-    height: 12px;
-    margin-top: 4px;
-    margin-right: 10px;
-    background: url("/public/images/detail/ic_b_arrow.png") no-repeat center/contain;
-  }
-
-  .listing_price_section .price_info {
+  .nft_listing_price_section .price_info {
     margin-top: 14px;
     font-family: "Noto Sans CJK KR";
     font-style: normal;
@@ -252,17 +222,41 @@
     color: #575d73;
   }
   
-  .button_sell_section {
-    width: 100%;
-    display: flex;
-    margin-top: 30px;
-    align-items: flex-start;
-  }
-  
-  .button_sell_section .button_sell {
+  .button_280 {
     width: 280px;
     height: 55px;
-    background: url("/public/images/detail/button_sell.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
+    margin-top: 30px;
   }
+  
+  .button_280 .button_280_bg {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    top: 2px;
+    background: #B2A170;
+    border-radius: 10px;
+  }
+
+  .button_280 .button_280_body {
+    position: absolute;
+    width: 280px;
+    height: 53px;
+    background: #F1E4B6;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+  }
+
+.button_280 .button_280_body .button_280_text {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+
+  color: #472716;
+}
