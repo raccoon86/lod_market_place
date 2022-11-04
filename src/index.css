@@ -75,10 +75,20 @@ img {
     align-items: center;
     justify-content: center;
   }
+  .tab_br {
+    display: block;
+  }
+  .mob_br {
+    display: none;
+  }
+  .pc_br {
+    display: none;
+  }
 }
 
 @media all and (max-width: 767px) {
   .container {
+    max-width: 420px;
     padding: 60px 20px;
   }
   .tab_br {

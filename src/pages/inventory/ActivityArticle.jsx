@@ -25,6 +25,8 @@ function ActivityArticle({ date, data }) {
                       <div className="result">
                         You have bought 1 item with ID{" "}
                         <span className="focus_text">{itemID}</span> from{" "}
+                        <br className="tab_br" />
+                        <br className="mob_br" />{" "}
                         <span className="focus_text">
                           {id.length > 15
                             ? id.substr(0, 8) + "..." + id.substr(20)
@@ -36,6 +38,8 @@ function ActivityArticle({ date, data }) {
                       <div className="result">
                         You have sold 1 Skin with ID{" "}
                         <span className="focus_text">#1154</span> from{" "}
+                        <br className="tab_br" />
+                        <br className="mob_br" />{" "}
                         <span className="focus_text">
                           {id.length > 15
                             ? id.substr(0, 8) + "..." + id.substr(20)
@@ -45,6 +49,7 @@ function ActivityArticle({ date, data }) {
                       </div>
                     )}
                     <div className="btn_view">
+                      <span className="time mob">{time}</span>
                       <span>View transaction</span>
                     </div>
                   </div>
@@ -64,6 +69,8 @@ function ActivityArticle({ date, data }) {
                       <div className="result">
                         You have bought 1 item with ID{" "}
                         <span className="focus_text">{itemID}</span> from{" "}
+                        <br className="tab_br" />
+                        <br className="mob_br" />{" "}
                         <span className="focus_text">
                           {id.length > 15
                             ? id.substr(0, 8) + "..." + id.substr(20)
@@ -75,6 +82,8 @@ function ActivityArticle({ date, data }) {
                       <div className="result">
                         You have sold 1 Skin with ID{" "}
                         <span className="focus_text">#1154</span> from{" "}
+                        <br className="tab_br" />
+                        <br className="mob_br" />{" "}
                         <span className="focus_text">
                           {id.length > 15
                             ? id.substr(0, 8) + "..." + id.substr(20)
@@ -84,6 +93,7 @@ function ActivityArticle({ date, data }) {
                       </div>
                     )}
                     <div className="btn_view">
+                      <span className="time mob">{time}</span>
                       <span>View transaction</span>
                     </div>
                   </div>
@@ -103,6 +113,8 @@ function ActivityArticle({ date, data }) {
                       <div className="result">
                         You have bought 1 item with ID{" "}
                         <span className="focus_text">{itemID}</span> from{" "}
+                        <br className="tab_br" />
+                        <br className="mob_br" />{" "}
                         <span className="focus_text">
                           {id.length > 15
                             ? id.substr(0, 8) + "..." + id.substr(20)
@@ -114,6 +126,8 @@ function ActivityArticle({ date, data }) {
                       <div className="result">
                         You have sold 1 Skin with ID{" "}
                         <span className="focus_text">#1154</span> from{" "}
+                        <br className="tab_br" />
+                        <br className="mob_br" />{" "}
                         <span className="focus_text">
                           {id.length > 15
                             ? id.substr(0, 8) + "..." + id.substr(20)
@@ -123,6 +137,7 @@ function ActivityArticle({ date, data }) {
                       </div>
                     )}
                     <div className="btn_view">
+                      <span className="time mob">{time}</span>
                       <span>View transaction</span>
                     </div>
                   </div>
