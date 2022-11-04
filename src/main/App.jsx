@@ -5,6 +5,7 @@ import Home from '../pages/home/Home';
 import Inventory from '../pages/inventory/Inventory';
 import Game from '../pages/game/Game';
 import MyNFT from '../pages/detail/MyNFTDetail';
+import MyNFTList from '../pages/detail/MyNFTListDetail';
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
         <Route path = "/detail/:id" element= {<Detail/>} />
         <Route path = "/inventory" element={<Inventory/>} />
         <Route path = "/inventory/my_nft/detail/:id" element={<MyNFT/>} />
+        <Route path = "/inventory/my_nft_list/detail/:id" element={<MyNFTList/>} />
         <Route path = "/game" element={<Game/>} />
       </Routes>
     </BrowserRouter>

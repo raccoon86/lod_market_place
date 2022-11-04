@@ -9,7 +9,7 @@ import ListNFT from "./ListNFT";
 import ActivityNFT from "./ActivityNFT";
 
 export default function Inventory() {
-  const { currentTab } = useLocation();
+  const location = useLocation();
   const [count, setCount] = useState(0);
 
   const cards = [
@@ -271,6 +271,7 @@ export default function Inventory() {
     },
   ];
 
+  console.log(`현재 탭 : ${JSON.stringify(location)}`);
   const [tab, setTab] = useState("my_nft");
   const [posts, setPosts] = useState([cards]);
   const [limit, setLimit] = useState(12);

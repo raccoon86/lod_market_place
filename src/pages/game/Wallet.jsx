@@ -83,7 +83,7 @@ export default function Wallet() {
                         <span className='nft_msg'>Inventory NFTs</span>
                         <div className='card_section'>
 
-                            {posts !== null && posts.slice(offset, offset + limit).map(({ id, name, race, rarity,price, url }) => (
+                            {cards !== null && cards.slice(offset, offset + limit).map(({ id, name, race, rarity,price, url }) => (
                             <article key={id}>
                                 <div className='nft_card'>
                                     <div className='nft_card_info' style={{backgroundImage: `url("${url}")`}}>
@@ -102,7 +102,7 @@ export default function Wallet() {
                         </div>
                     <div className='pagination_section'>        
                         <Pagination
-                            total={posts.length}
+                            total={cards.length}
                             limit={limit}
                             page={page}
                             setPage={setPage}
