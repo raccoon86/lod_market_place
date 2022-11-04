@@ -3,26 +3,23 @@ import React , { useEffect, useState } from 'react';
 import Header from '../header/Header';
 import Footer from '../footer/Footer'; 
 import GameInfo from './GameInfo';
-import Pagination from '../pagination/Pagination';
+import Account from './Account';
+import Wallet from './Wallet';
+
 const Game = () => {
-    const [posts, setPosts] = useState([]);
-    const [limit, setLimit] = useState(12);
-    const [page, setPage] = useState(1);
-    const [Selected, setSelected] = useState("");
-    const [checkedItems, setCheckedItems] = useState([]);
-    const offset = (page - 1) * limit;    
+    // const [posts, setPosts] = useState([]);
+    // const [limit, setLimit] = useState(10);
+    // const [page, setPage] = useState(1);
+    // const [Selected, setSelected] = useState("");
+    // const [checkedItems, setCheckedItems] = useState([]);
+    // const offset = (page - 1) * limit;    
     const [tab, setTab] = useState("game");
     const onClick = (value) => {
         console.log(value);
         setTab(value);
         console.log(`결과 ${value}`);
     };
-
     
-    useEffect(() => {
-        setPosts(cards)
-    }, [posts]);
-
     const checkHandler = ({ target }) => {
         setTab(target.value);
       };
@@ -65,88 +62,32 @@ const Game = () => {
     
       
 return (
-    <div className='game_container'>
-        <Header/>
-        <span className='game_msg'>Game</span>
-        <span className='sub_msg'>Play the LOD and Manage Your Account</span>
-        <div className='game_info_container'>
-            <div className='menu_section'>
-                <input id="ch_game" className='game_checkbox' name="game" type='radio' value='game' onChange={(e) => checkHandler(e)} defaultChecked={true}/>
-                <label for='ch_game'>
-                    <div className='game_title'>Game PLAY</div>
-                </label>
+    <div className='game_main'>
+        <Header cursor="game" />
+        <div className='game_section'>
+            <div className='container'>
+                <span className='game_msg'>Game</span>
+                <span className='sub_msg'>Play the LOD and Manage Your Account</span>
+                <div className='game_info_container'>
+                    <div className='menu_section'>
+                        <input id="ch_game" className='game_checkbox' name="game" type='radio' value='game' onChange={(e) => checkHandler(e)} defaultChecked={true}/>
+                        <label for='ch_game'>
+                            <div className='game_title'>Game PLAY</div>
+                        </label>
 
-                <input id="ch_account" className='account_checkbox' name="game" type='radio' value='account' onChange={(e) => checkHandler(e)}/>
-                <label for='ch_account'>
-                    <div className='account_title'>Account</div>
-                </label>
+                        <input id="ch_account" className='account_checkbox' name="game" type='radio' value='account' onChange={(e) => checkHandler(e)}/>
+                        <label for='ch_account'>
+                            <div className='account_title'>Account</div>
+                        </label>
 
-                <input id="ch_wallet" className='wallet_checkbox' name="game" type='radio' value='wallet' onChange={(e) => checkHandler(e)}/>
-                <label for='ch_wallet'>
-                    <div className='wallet_title'>Wallet</div>
-                </label>
-            </div>
-            {/* { tab === "game" && <GameInfo/> } */}
-            <div className='info_section'>
-                <div className='account_info_section'>
-                    <span className='account_info_title'>Account Infomation</span>
-                    <div className='wallet_connect_section' style={ {display: "none"}}>
-                        <div className='button_connect_wallet'/>
+                        <input id="ch_wallet" className='wallet_checkbox' name="game" type='radio' value='wallet' onChange={(e) => checkHandler(e)}/>
+                        <label for='ch_wallet'>
+                            <div className='wallet_title'>Wallet</div>
+                         </label>
                     </div>
-                    <div className='wallet_address_title_section'>
-                        <div className='wallet'/> <span>Wallet Address</span>
-                    </div>
-                    <div className='wallet_address_section'>
-                        <span className='address_name'>Owner</span>
-                        <span className='address'>0xc885f123123122312221e40ffe5</span>
-                    </div>
-                    <div className='wallet_token_section'>
-                        <div className='token_title_section'>
-                            <div className='token'/> <span>Token</span>
-                        </div>
-                        <div className='btn_sync'/>
-                    </div>
-                    <div className='wallet_info_section'>
-                        <div className='account_lort_section'>
-                            <span className='lort_title'>Account LORT:</span>
-                            <span className='lort_result'>100</span>
-                            <div className='button_claim'/>
-                        </div>
-                        <span className='acccount_line'></span>
-                        <div className='account_logt_section'>
-                            <span className='logt_title'>Account LOGT:</span>
-                            <span className='logt_result'>100</span>
-                            <div className='button_claim'/>
-                        </div>
-                    </div>
-                </div>
-                <div className='nft_section'>
-                        <span className='nft_msg'>NFTs</span>
-                        <div className='card_section'>
-                        {posts.slice(offset, offset + limit).map(({ id, name, race, rarity,price, url }) => (
-                        <article key={id}>
-                            <div className='nft_card'>
-                                <div className='nft_card_info' style={{backgroundImage: `url("${url}")`}}>
-                                    <div className='nft_card_gradient' >
-                                        { rarity === "e" && <div className='nft_level_e'></div> }
-                                        { rarity === "sr" && <div className='nft_level_sr'></div> }
-                                        { rarity === "r" && <div className='nft_level_r'></div> }
-                                        { rarity === "n" && <div className='nft_level_n'></div> }
-                                        <div className='nft_character_name'>{name}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        ))}
-                        </div>
-                    <div className='pagination_section'>        
-                        <Pagination
-                            total={posts.length}
-                            limit={limit}
-                            page={page}
-                            setPage={setPage}
-                        />
-                    </div>
+                    { tab === "game" && <GameInfo/> }
+                    { tab === "account" && <Account/>}
+                    { tab == "wallet" && <Wallet/>}
                 </div>
             </div>
         </div>

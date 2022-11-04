@@ -1,9 +1,13 @@
-.game_container {
-    width: 100vw;
+.game_main {
+    width: 100%;
     height: auto;
-    background: linear-gradient(360deg, #0B0E1C 13.27%, rgba(11, 14, 28, 0) 100%), url('/public/images/game/bg_game.png');
-    background-size : 100%, 100%, cover;
-    background-repeat: no-repeat, no-repeat;
+}
+
+.game_section {
+    width: 100%;
+    min-height: 100vh;
+  
+    background: url("/public/images/game/bg_game.png") no-repeat center/cover;
 }
 
 .game_msg {
@@ -23,7 +27,7 @@
     text-shadow: 0px 0px 40px rgba(255, 196, 82, 0.25), 0px 0px 20px #FFC452;
 }
 
-.game_container .game_info_container {
+.game_info_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -34,7 +38,7 @@
     width: 100%;
 }
 
-.game_container .game_info_container .menu_section {
+.game_info_container .menu_section {
     height: auto;
     width: 270px;
     background: #161929;
@@ -319,7 +323,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     background-size: cover;
 } 
 
-.game_container .info_section {
+.info_section {
     display: flex;
     flex-direction: column;
     height: auto;
@@ -327,13 +331,22 @@ input[id='ch_wallet']:checked + label .wallet_title {
     background: #161929;
     border-radius: 20px;
 }
-.game_container .account_info_section {
+.info_section .account_info_section {
     padding: 30px;
     justify-content: flex-start;
     justify-items: flex-start;
     align-items: flex-start;
 }
-.game_container .account_info_section .account_info_title {
+
+.info_section .wallet_info_section {
+    padding: 30px;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
+
+.info_section .wallet_info_section .wallet_info_title {
+    display: flex;
     font-family: 'ITC New Baskerville';
     font-style: normal;
     font-weight: 500;
@@ -342,17 +355,18 @@ input[id='ch_wallet']:checked + label .wallet_title {
     color: #D3CBAF;
 }
 
-.game_container .account_info_section .wallet_connect_section {
+.account_info_section .account_info_title {
     display: flex;
-    width: 764px;
-    height: 330px;
-    margin-top: 25px;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
+    font-family: 'ITC New Baskerville';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 42px;
+    color: #D3CBAF;
 }
 
-.game_container .account_info_section .wallet_connect_section .button_connect_wallet {
+
+.wallet_connect_section .button_connect_wallet {
     width: 307px;
     height: 60px;
     background: url('/public/images/game/btn_wallet.png');
@@ -363,13 +377,13 @@ input[id='ch_wallet']:checked + label .wallet_title {
     justify-items: center;
 }
 
-.game_container .account_info_section .wallet_address_title_section {
+.account_info_section .wallet_address_title_section {
     display: flex;
     align-items: center;
     margin-top: 25px;
 }
 
-.game_container .account_info_section .wallet_address_title_section .wallet {
+.account_info_section .wallet_address_title_section .wallet {
     height: 23.764705657958984px;
     width: 25.25px;
     background: url('/public/images/game/ic_wallet.png');
@@ -378,7 +392,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-right: 10px;
 }
 
-.game_container .account_info_section .wallet_address_title_section span {
+.account_info_section .wallet_address_title_section span {
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 400;
@@ -387,7 +401,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     color: #FFFFFF;
 }
 
-.game_container .account_info_section .wallet_address_section {
+.account_info_section .wallet_address_section {
     display: flex;
     margin-top: 12px;
     align-items: center;
@@ -399,7 +413,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     border-radius: 10px;
 }
 
-.game_container .account_info_section .wallet_address_section .address_name {
+.account_info_section .wallet_address_section .address_name {
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 500; 
@@ -408,7 +422,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-right: 18px;
 }
   
-.game_container .account_info_section .wallet_address_section .address {
+.account_info_section .wallet_address_section .address {
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 400;
@@ -421,7 +435,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     overflow: hidden;
 }
 
-.game_container .account_info_section .wallet_token_section {
+.account_info_section .wallet_token_section {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -430,13 +444,13 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-top: 20px;
 }
 
-.game_container .account_info_section .wallet_token_section .token_title_section {
+.account_info_section .wallet_token_section .token_title_section {
     display: flex;
     justify-items: center;
     align-items: center;
 }
 
-.game_container .account_info_section .wallet_token_section .token_title_section .token{
+.account_info_section .wallet_token_section .token_title_section .token{
     width: 30px;
     height: 30px;
     background: url('/public/images/game/ic_token.png');
@@ -445,7 +459,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-right: 7px;
 }
 
-.game_container .account_info_section .wallet_token_section .token_title_section span{
+.account_info_section .wallet_token_section .token_title_section span{
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 400;
@@ -454,7 +468,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     color: #FFFFFF;
 }
 
-.game_container .account_info_section .wallet_token_section .btn_sync {
+.account_info_section .wallet_token_section .btn_sync {
     width: 67px;
     height: 29px;
     background: url('/public/images/game/ic_sync.png');
@@ -463,7 +477,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-right: 20px;
 }
 
-.game_container .info_section .account_info_section .wallet_info_section {
+.info_section .account_info_section .wallet_info_section {
     display: flex;
     flex-direction: row;
     margin-top: 12px;
@@ -476,7 +490,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     border-radius: 10px;
 }
 
-.game_container .account_info_section .wallet_info_section .account_lort_section {
+.account_info_section .wallet_info_section .account_lort_section {
     display: flex;
     width: auto;
     height: 100%;
@@ -484,7 +498,8 @@ input[id='ch_wallet']:checked + label .wallet_title {
     justify-items: center;
     align-items: center;
 }
-.game_container .account_info_section .wallet_info_section .account_lort_section .lort_title {
+
+.account_info_section .wallet_info_section .account_lort_section .lort_title {
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 700;
@@ -494,7 +509,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-right: 40px;
 }
 
-.game_container .account_info_section .wallet_info_section .account_lort_section .lort_result {
+.account_info_section .wallet_info_section .account_lort_section .lort_result {
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 700;
@@ -504,7 +519,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-right: 27px;
 }
 
-.game_container .account_info_section .wallet_info_section .account_lort_section .button_claim {
+.account_info_section .wallet_info_section .account_lort_section .button_claim {
     width: 111px;
     height: 45px;
     background: url('/public/images/game/btn_claim.png');
@@ -513,7 +528,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-right: 7px;
 }
 
-.game_container .account_info_section .wallet_info_section .account_logt_section {
+.account_info_section .wallet_info_section .account_logt_section {
     display: flex;
     width: auto;
     height: 100%;
@@ -521,7 +536,8 @@ input[id='ch_wallet']:checked + label .wallet_title {
     justify-items: center;
     align-items: center;
 }
-.game_container .account_info_section .wallet_info_section .account_logt_section .logt_title {
+
+.account_info_section .wallet_info_section .account_logt_section .logt_title {
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 700;
@@ -532,7 +548,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-left: 21px;
 }
 
-.game_container .account_info_section .wallet_info_section .account_logt_section .logt_result {
+.account_info_section .wallet_info_section .account_logt_section .logt_result {
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 700;
@@ -542,7 +558,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     margin-right: 27px;
 }
 
-.game_container .account_info_section .wallet_info_section .account_logt_section .button_claim {
+.account_info_section .wallet_info_section .account_logt_section .button_claim {
     width: 111px;
     height: 45px;
     background: url('/public/images/game/btn_claim.png');
@@ -550,7 +566,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     background-size: contain;
 }
 
-.game_container .account_info_section .wallet_info_section .acccount_line {
+.account_info_section .wallet_info_section .acccount_line {
     width: 2px;
     height: 60px;
     background: url('/public/images/game/account_line.png');
@@ -558,15 +574,15 @@ input[id='ch_wallet']:checked + label .wallet_title {
     background-size: contain;
 }
 
-.game_container .game_info_container .info_section .nft_section {
+.game_info_container .info_section .nft_section {
     height: auto;
-    width: 830px;
+    width: 760px;
     background: #1F2333;
     border-radius: 20px;
     padding: 12px 35px 35px 35px;
 }
 
-.game_container .game_info_container .info_section .nft_msg {
+.game_info_container .info_section .nft_msg {
     display: flex;
     font-family: 'ITC New Baskerville';
     font-style: normal;
@@ -574,20 +590,20 @@ input[id='ch_wallet']:checked + label .wallet_title {
     font-size: 34px;
     line-height: 42px;
     color: #F2E4B6;
+    margin-bottom: 10px;
 }
 
-.game_container .game_info_container .info_section .nft_section .card_section {
-    height: 100%;
-    margin-top: 35px;
-    margin-bottom: 40px;
+.game_info_container .info_section .nft_section .card_section {
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin-bottom: 40px;
 }
 
-.game_container .game_info_container .info_section .nft_section .card_section .nft_card {
-    width: 182px;
-    height: 310px;
+.game_info_container .info_section .nft_section .card_section .nft_card {
+    width: 128px;
+    height: 229px;
     border: 2px solid #383C4E;
     border-radius: 8px;
     padding: 6px;
@@ -602,7 +618,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     ) 0 0 100% 0;
 }
 
-.game_container .game_info_container .info_section .nft_section .card_section .nft_card .nft_card_info {
+.game_info_container .info_section .nft_section .card_section .nft_card .nft_card_info {
     width: 100%;
     height: 100%;
     border-radius: 8px;
@@ -610,7 +626,7 @@ input[id='ch_wallet']:checked + label .wallet_title {
     background-size: cover;
   }
   
-.game_container .game_info_container .info_section .nft_section .card_section .nft_card .nft_card_gradient {
+.game_info_container .info_section .nft_section .card_section .nft_card .nft_card_gradient {
     display: flex;
     width: 100%;
     height: 100%;
@@ -623,93 +639,68 @@ input[id='ch_wallet']:checked + label .wallet_title {
     align-items: flex-start;
 }
   
-.game_container .game_info_container .info_section .nft_section .card_section .nft_card:hover .nft_card_gradient {
+.game_info_container .info_section .nft_section .card_section .nft_card:hover .nft_card_gradient {
     background: linear-gradient(180deg, rgba(62, 45, 21, 0) 48.15%, rgba(62, 45, 21, 0.4) 60.4%, #816040 100%);
     background-repeat: no-repeat;
     background-size: cover;
 }
-.game_container .game_info_container .info_section .nft_section .card_section .nft_card .nft_card_info .nft_level_e {
+
+.game_info_container .info_section .nft_section .card_section .nft_card .nft_card_info .nft_level_e {
     width: 34px;
     height: 17px;
-    margin-left: 15px;
+    margin-left: 10px;
     background: url('/public/images/card/level_e.png');
-  }
+}
   
-  .game_container .game_info_container .info_section .nft_section .card_section .nft_card_info .nft_level_sr {
+.game_info_container .info_section .nft_section .card_section .nft_card_info .nft_level_sr {
     width: 34px;
     height: 17px;
-    margin-left: 15px;
+    margin-left: 10px;
     background: url('/public/images/card/level_sr.png');
-  }
+}
   
-  .game_container .game_info_container .info_section .nft_section .card_section .nft_card_info .nft_level_r {
+.game_info_container .info_section .nft_section .card_section .nft_card_info .nft_level_r {
     width: 34px;
     height: 17px;
-    margin-left: 15px;
+    margin-left: 10px;
     background: url('/public/images/card/level_r.png');
-  }
+}
   
-  .game_container .game_info_container .info_section .nft_section .card_section .nft_card_info .nft_level_n {
+.game_info_container .info_section .nft_section .card_section .nft_card_info .nft_level_n {
     width: 34px;
     height: 17px;
-    margin-left: 15px;
+    margin-left: 10px;
     background: url('/public/images/card/level_n.png');
-  }
+}
   
-  .game_container .game_info_container .info_section .nft_section .card_section .nft_card_info .nft_character_name {
+.game_info_container .info_section .nft_section .card_section .nft_card_info .nft_character_name {
     margin-top: 10px;
     font-family: 'ITC New Baskerville';
-    margin-left: 15px;
+    margin-left: 10px;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 17px;
     color: #F2E4B6;
-  }
-  
-  .game_container .game_info_container .info_section .nft_section .card_section.nft_card_info .nft_price_section {
-    width: 100%;
-    margin: 8px 0px 18px 0px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+    align-items: flex-end;
+    white-space: nowrap; 	
+    margin-bottom: 8px;
+}
   
-  .game_container .game_info_container .info_section .nft_section .card_section .nft_card_info .nft_price_section .nft_current_price {
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
+.game_info_container .info_section .nft_section .button_withdraw {
+    width: 144px;
+    height: 31px;
+    margin-top: 5px;
+    background: url('/public/images/game/button_withdraw.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
   
-  .game_container .game_info_container .info_section .nft_section .card_section .nft_card_info .nft_price_section .nft_current_price .nft_price_icon {
-    width: 14px;
-    height: 14px;
-  }
-  
-  .game_container .game_info_container .info_section .nft_section .card_section .nft_card_info .nft_price_section .nft_current_price .nft_price_text {
-    font-weight: 700;
-    font-size: 10px;
-    line-height: 15px;
-    margin-left: 3px;
-  }
-  
-  .game_container .game_info_container .info_section .nft_section .card_section .nft_card_info .nft_price_section .nft_max_price {
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  .game_container .game_info_container .info_section .nft_section .card_section .nft_card_info .nft_price_section .nft_max_price .nft_max_price_text {
-    font-weight: 700;
-    font-size: 10px;
-    line-height: 15px;
-    color: #96A3AE;
-  }
-  
-  .pagintaion_section {
+.pagintaion_section {
     width: 100%;
     display: flex;
     justify-content: center;
     justify-items: center;
-  }
+}
   

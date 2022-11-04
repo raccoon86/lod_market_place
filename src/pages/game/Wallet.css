@@ -1,0 +1,163 @@
+.info_section {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 830px;
+    background: #161929;
+    border-radius: 20px;
+}
+
+.info_section .wallet_info_section {
+    padding: 30px;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
+
+.info_section .wallet_info_section .wallet_connect_section {
+    display: flex;
+    width: 764px;
+    height: 330px;
+    margin-top: 25px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.info_section .wallet_info_section .wallet_token_section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+
+.info_section .wallet_info_section .wallet_token_section .token_title_section {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.info_section .wallet_info_section .wallet_token_section .token_title_section span{
+    font-family: 'ITC New Baskerville';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    color: #D3CBAF;
+}
+
+.info_section .wallet_info_section .wallet_token_section .btn_sync {
+    width: 67px;
+    height: 29px;
+    background: url('/public/images/game/ic_sync.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+}
+
+.info_section .wallet_info_section .deposit_info_section {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+    align-items: center;
+    padding: 20px;
+    height: 20px;
+    width: 709px;
+    margin-right: 40px;
+    background: #1F2333;
+    border-radius: 10px;
+}
+
+.info_section .wallet_info_section .deposit_lort_section {
+    display: flex;
+    width: auto;
+    height: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+.info_section .wallet_info_section .deposit_lort_section .lort_title {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+    margin-right: 40px;
+}
+
+.info_section .wallet_info_section .deposit_lort_section .lort_result {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: #F0B90B;
+    margin-right: 27px;
+}
+
+.info_section .wallet_info_section .deposit_lort_section .button_deposit {
+    width: 111px;
+    height: 45px;
+    background: url('/public/images/game/btn_deposit.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 7px;
+}
+
+.info_section .wallet_info_section .deposit_logt_section {
+    display: flex;
+    width: auto;
+    height: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+.info_section .wallet_info_section .deposit_logt_section .logt_title {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+    margin-right: 40px;
+    margin-left: 21px;
+}
+
+.info_section .wallet_info_section .deposit_logt_section .logt_result {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: #F0B90B;
+    margin-right: 27px;
+}
+
+.info_section .wallet_info_section .deposit_logt_section .button_deposit {
+    width: 111px;
+    height: 45px;
+    background: url('/public/images/game/btn_deposit.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.info_section .wallet_info_section .acccount_line {
+    width: 2px;
+    height: 60px;
+    background: url('/public/images/game/account_line.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.game_info_container .info_section .nft_section .button_deposit {
+    width: 144px;
+    height: 31px;
+    margin-top: 5px;
+    background: url('/public/images/game/button_deposit.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

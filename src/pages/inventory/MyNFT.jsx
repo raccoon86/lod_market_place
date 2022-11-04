@@ -1,17 +1,24 @@
-import './Inventory.css';
-import React, { useState, useEffect } from 'react';
-import Header from '../header/Header';
-import Footer from '../footer/Footer'; 
+import './MyNFT.css';
+import React, {useEffect , useState }from 'react'
+import Pagination from '../pagination/Pagination';
 
-import { useLocation } from 'react-router-dom';
-import MyNFT from './MyNFT';
-import ListNFT from './ListNFT';
-import ActivityNFT from './ActivityNFT';
+function MyNFT() {
+    const [posts, setPosts] = useState([]);
+    const [limit, setLimit] = useState(10);
+    const [page, setPage] = useState(1);
+    const [Selected, setSelected] = useState("");
+    const [checkedItems, setCheckedItems] = useState([]);
+    const offset = (page - 1) * limit;    
+    const [tab, setTab] = useState("game");
+    
+    useEffect(() => {
+        if(posts.length === 0) {
+            setPosts(cards);
+        } else {
+            console.log(posts.length)
+        }
+    }, [setPosts])
 
-export default function Inventory() {
-  const { currentTab } = useLocation();
-  const [count, setCount] = useState(0);
-  
     const cards = [
         {id: 1, name: 'Fated Judge', race: 'b', rarity: 'e', price: 502, url:"/images/card/card_01.png"},
         {id: 2, name: 'Son of the Wind', race: 'a', rarity: 'e', price: 502, url:"/images/card/card_02.png"},
@@ -46,73 +53,46 @@ export default function Inventory() {
         {id: 31, name: 'Overseer', race: 'l', rarity: 'n', price: 502, url:"/images/card/card_31.png"},
         {id: 32, name: 'Rogue', race: 'b', rarity: 'n', price: 502, url:"/images/card/card_32.png"},
       ];
-    
-    const [tab, setTab] = useState('my_nft');
-    const [posts, setPosts] = useState([cards]);
-    const [limit, setLimit] = useState(12);
-    const [page, setPage] = useState(1);
-    const [Selected, setSelected] = useState("");
-    const [checkedItems, setCheckedItems] = useState([]);
-    const offset = (page - 1) * limit;      
-    
-    // useEffect(() => { 
-    //     // setPostHandler(checkedItems);
-    //     // setPosts(cards);
-    //   }, [posts]);
-    
-      const checkHandler = ({ target }) => {
-        setTab(target.value);
-      };
-    
-    
+
   return (
-    <div className='inventory_container'>
-        <Header cursor="inventory"/>
-        { tab === "my_nft" &&
-          <div>
-            <span className='my_nft_msg'>My NFTs</span>
-            <span className='sub_msg'>here You can check the items and sell it</span>
-          </div>
-        }
-        
-        { tab === "my_nft_list" &&
-          <div>
-            <span className='my_nft_msg'>Listed NFTs</span>
-            <span className='sub_msg'>here You can check out the list and unlist it</span>
-          </div>
-        }
-
-        { tab === "activity" &&
-          <div>
-            <span className='my_nft_msg'>Activity</span>
-            <span className='sub_msg'></span>
-          </div>
-        }
-
-        {/* <span className='my_nft_msg'>My NFTs</span>
-        <span className='sub_msg'>here You can check the items and sell it</span> */}
-        <div className='my_nft_container'>
-            <div className='my_nft_list_section'>
-                <input id="ch_my_nft" className='my_nft_checkbox' name="inventory" type='radio' value='my_nft' onChange={(e) => checkHandler(e)} defaultChecked={true}/>
-                <label for='ch_my_nft'>
-                    <div className='my_nft_title'>NFTs</div>
-                </label>
-
-                <input id="ch_my_nft_list" className='my_nft_list_checkbox' name="inventory" type='radio' value='my_nft_list' onChange={(e) => checkHandler(e)}/>
-                <label for='ch_my_nft_list'>
-                    <div className='my_nft_list_title'>Listed NFTs</div>
-                </label>
-
-                <input id="ch_activity" className='activity_checkbox' name="inventory" type='radio' value='activity' onChange={(e) => checkHandler(e)}/>
-                <label for='ch_activity'>
-                    <div className='activity_title'>Activity NFTs</div>
-                </label>
+        <div className='main_card_section'>
+            <div className='card_section'>
+                {/* {content} */}
+                {posts.length !== 0 && posts.slice(offset, offset + limit).map(({ id, name, race, rarity,price, url }) => (
+                    <article key={id}>
+                        <div className='nft_card'>
+                        <div className='nft_card_info' style={{backgroundImage: `url("${url}")`}}>
+                            <div className='nft_card_gradient' >
+                                { rarity === "e" && <div className='nft_level_e'></div> }
+                                { rarity === "sr" && <div className='nft_level_sr'></div> }
+                                { rarity === "r" && <div className='nft_level_r'></div> }
+                                { rarity === "n" && <div className='nft_level_n'></div> }
+                                <div className='nft_character_name'>{name}</div>
+                                    <div className='nft_price_section'>
+                                        <div className='nft_current_price'>
+                                            <img className='nft_price_icon' src="/images/card/ic_coin.png"/>
+                                            <span className='nft_price_text'>{price} BUSD</span>
+                                        </div>
+                                        <div className='nft_max_price'>
+                                            <span className='nft_max_price_text'>~${price}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div> 
+            <div className='pagination_section'>
+                <Pagination
+                  total={posts.length !== 0 ? posts.length : 0}
+                  limit={limit}
+                  page={page}
+                  setPage={setPage}
+                />
             </div>
-            { tab === "my_nft" && <MyNFT/>}
-            { tab === "my_nft_list" && <ListNFT/>}
-            { tab === "activity" && <ActivityNFT/>}
-        </div>    
-    <Footer/>
-    </div>
-  )
+        </div>
+  );
 }
+
+export default MyNFT;

@@ -1,37 +1,34 @@
-import "../detail/Detail.css";
-import React, { useState } from "react";
+import './MyNFTDetail.css';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Modal from "../modal/SellModal";
-import { useNavigate } from "react-router-dom";
 
-function Detail() {
-  const navigator = useNavigate();
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  const navToHome = () => {
-    navigator("/")
-  }
+function MyNFTDetail() {
+    const navigator = useNavigate()
+    const [modalOpen, setModalOpen] = useState(false);
+  
+    const openModal = () => {
+      setModalOpen(true);
+    };
+    const closeModal = () => {
+      setModalOpen(false);
+    };
+  
+    const navToInventory = () => {
+      navigator("/inventory", {tab : "myNft"});
+    }
 
   return (
-    <div className="main">
+<div className="main">
       <Header />
       <section>
         <div className="container">
-          <span className="welcome_msg">Welcome to the LOD MarketPlace</span>
-          <span className="sub_msg">
-            Here you can search and buy item to enrich your collection
-          </span>
-
+          <span className="welcome_msg">My NFTs</span>
+          <span className="sub_msg">here You can check the items and sell it</span>
           <div className="detail_card_section">
-            <div className="back_section" onClick={navToHome}>
+            <div className="back_section" onClick={navToInventory}>
               <div className="back_image" />
               <span>Back</span>
             </div>
@@ -39,8 +36,8 @@ function Detail() {
               <div className="character_image" />
               <div className="detail_character_info">
                 <div className="character_name_section">
-                  <span className="name">Fated Judge</span>{" "}
-                  <span className="code_number">#3390</span>
+                  <span className="name">#Storm Crow</span>
+                  <span className="code_number">#1-#10000</span>
                 </div>
                 <div className="wallet_section">
                   <span className="wallet_title">Wallet Address</span>
@@ -58,16 +55,21 @@ function Detail() {
                 <div className="listing_price_section">
                   <span className="price_title">Listing Price</span>
                   <div className="price_section">
-                    <div className="coin"></div>
-                    <span className="price">2,000</span>
+                    <div className='price'>2,000</div>
+                    <div className="coin_section">
+                        <div className='line'/>
+                        <div className='icon_coin'/>
+                        <span className='unit'>BUSD</span>
+                        <div className='arrow'/>
+                    </div>
                   </div>
                   <span className="price_info">
-                    3% transaction fee will be paid when the sale is completed.
+                    3% transaction fee will be paid when the sale is comleted.
                   </span>
                 </div>
                 <React.Fragment>
-                  <div className="button_buy_section">
-                    <div onClick={ openModal } className="button_buy" />
+                  <div className="button_sell_section">
+                    <div onClick={ openModal } className="button_sell" />
                   </div>
                   <Modal open={modalOpen} close={closeModal} header="Modal heading"/>
                 </React.Fragment>
@@ -78,8 +80,7 @@ function Detail() {
       </section>
       <Footer />
     </div>
-  );
+  )
 }
 
-
-export default Detail
+export default MyNFTDetail;

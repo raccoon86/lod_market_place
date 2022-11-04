@@ -349,7 +349,7 @@ export default function Home() {
   ));
   return (
     <div className="main">
-      <Header />
+      <Header cursor="marketplace" />
       <section>
         <div className="container">
           <span className="welcome_msg">Welcome to the LOD MarketPlace</span>
@@ -491,7 +491,7 @@ export default function Home() {
                     onChange={handleSelect}
                     value={Selected}
                   >
-                    <option selected value="recent">
+                    <option value="recent">
                       Recent
                     </option>
                     <option value="oldest">Oldest</option>

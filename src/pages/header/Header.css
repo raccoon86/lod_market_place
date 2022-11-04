@@ -15,6 +15,7 @@
   align-items: center;
   text-align: center;
   text-transform: uppercase;
+  z-index: 9999;
   color: #ffffff;
 }
 
@@ -27,8 +28,27 @@
   margin-right: 22px;
 }
 
+.cursor_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
 .marketplace {
+  width: 100px;
   margin-right: 50px;
+}
+
+.c_marketplace {
+  width: 100px;
+  margin-right: 50px;
+  color: #F2E4B6;
+}
+
+.cursor {
+  width: 100px;
+  height: 5px;
+  background: url('/public/images/main/under_line.png') center/cover;
 }
 
 .comming {
@@ -39,15 +59,36 @@
 }
 
 .game {
+  width: 100px;
   margin-right: 50px;
+}
+
+.c_game {
+  width: 100px;
+  margin-right: 50px;
+  color: #F2E4B6;
 }
 
 .document {
+  width: 100px;
   margin-right: 50px;
 }
 
+.c_document {
+  width: 100px;
+  margin-right: 50px;
+  color: #F2E4B6;
+}
+
 .inventory {
+  width: 100px;
   margin-right: 100px;
+}
+
+.c_inventory {
+  width: 100px;
+  margin-right: 100px;
+  color: #F2E4B6;
 }
 
 .wallet {
@@ -57,3 +98,5 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
