@@ -318,7 +318,7 @@ export default function ActivityNFT() {
         <span className='activity_title'>Activity</span>
         <article className='activity_article'>
             {
-                timeline.map((res) => (
+                timeline.slice(offset, offset + limit).map((res) => (
                     <ActivityArticle date={res.date} data={res.data}/>
                 ))
             }

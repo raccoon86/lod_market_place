@@ -4,7 +4,7 @@ import Pagination from '../pagination/Pagination';
 
 export default function Account() {
 
-    const [posts, setPosts] = useState(cards);
+    const [posts, setPosts] = useState();
     const [limit, setLimit] = useState(10);
     const [page, setPage] = useState(1);
     const [Selected, setSelected] = useState("");
@@ -13,7 +13,7 @@ export default function Account() {
     const [tab, setTab] = useState("game");
     
     useEffect(() => {
-    }, [posts])
+    }, [])
 
     const cards = [
         {id: 1, name: 'Fated Judge', race: 'b', rarity: 'e', price: 502, url:"/images/card/card_01.png"},
@@ -86,7 +86,7 @@ export default function Account() {
                 <div className='nft_section'>
                         <span className='nft_msg'>NFTs</span>
                         <div className='card_section'>
-                            {posts.slice(offset, offset + limit).map(({ id, name, race, rarity,price, url }) => (
+                            {cards.slice(offset, offset + limit).map(({ id, name, race, rarity,price, url }) => (
                             <article key={id}>
                                 <div className='nft_card'>
                                     <div className='nft_card_info' style={{backgroundImage: `url("${url}")`}}>
@@ -105,7 +105,7 @@ export default function Account() {
                         </div>
                     <div className='pagination_section'>        
                         <Pagination
-                            total={posts.length}
+                            total={cards.length}
                             limit={limit}
                             page={page}
                             setPage={setPage}

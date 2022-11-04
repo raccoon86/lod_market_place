@@ -5,8 +5,9 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Modal from "../modal/SellModal";
 
-function MyNFTDetail() {
-    const navigator= useNavigate()
+function MyNFTListDetail() {
+
+    const navigator = useNavigate()
     const [modalOpen, setModalOpen] = useState(false);
   
     const openModal = () => {
@@ -17,16 +18,15 @@ function MyNFTDetail() {
     };
   
     const navToInventory = () => {
-      navigator("/inventory", {state : {"tab" :"my_nft"}});
+      navigator("/inventory", {tab : "my_nft_list"});
     }
-
   return (
 <div className="main">
       <Header />
       <section>
         <div className="container">
-          <span className="welcome_msg">My NFTs</span>
-          <span className="sub_msg">here You can check the items and sell it</span>
+          <span className="welcome_msg">Listed NFTs</span>
+          <span className="sub_msg">here You can check out the list and unlist it</span>
           <div className="detail_card_section">
             <div className="back_section" onClick={navToInventory}>
               <div className="back_image" />
@@ -80,7 +80,7 @@ function MyNFTDetail() {
       </section>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default MyNFTDetail;
+export default MyNFTListDetail;
