@@ -42,13 +42,13 @@
 .c_marketplace {
   width: 100px;
   margin-right: 50px;
-  color: #F2E4B6;
+  color: #f2e4b6;
 }
 
 .cursor {
   width: 100px;
   height: 5px;
-  background: url('/public/images/main/under_line.png') center/cover;
+  background: url("/public/images/main/under_line.png") center/cover;
 }
 
 .comming {
@@ -66,7 +66,7 @@
 .c_game {
   width: 100px;
   margin-right: 50px;
-  color: #F2E4B6;
+  color: #f2e4b6;
 }
 
 .document {
@@ -77,7 +77,7 @@
 .c_document {
   width: 100px;
   margin-right: 50px;
-  color: #F2E4B6;
+  color: #f2e4b6;
 }
 
 .inventory {
@@ -88,7 +88,7 @@
 .c_inventory {
   width: 100px;
   margin-right: 100px;
-  color: #F2E4B6;
+  color: #f2e4b6;
 }
 
 .wallet {
@@ -98,5 +98,94 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
+.mobMenu_btn {
+  display: none;
+}
+.mobMenu {
+  display: none;
+}
+@media all and (max-width: 1179px) {
+  .menu {
+    justify-content: space-between;
+    padding: 8px 20px;
+    line-height: 34px;
+  }
+  .logo,
+  .mobMenu_btn {
+    position: relative;
+    z-index: 112;
+  }
+  .mobMenu_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 25px;
+    gap: 5px;
+  }
+  .mobMenu_btn_list {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+  .mobMenu_btn_list:nth-child(1).active {
+    transform: translate(0, 7px) rotate(45deg);
+  }
+  .mobMenu_btn_list:nth-child(2).active {
+    opacity: 0;
+  }
+  .mobMenu_btn_list:nth-child(3).active {
+    transform: translate(0, -9px) rotate(-45deg);
+  }
+  .menu_list {
+    display: none;
+  }
+  .mobMenu {
+    display: block;
+    width: 100%;
+    height: 0;
+    position: fixed;
+    top: 0;
+    z-index: 111;
+    left: 0;
+    background: #0b0e1c;
+    mix-blend-mode: normal;
+    transition: height 0.3s;
+    overflow: hidden;
+  }
+  .mobMenu.active {
+    height: 100vh;
+  }
+  .mobMenu_wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 29px;
+    text-align: center;
+    gap: 50px;
+  }
+  .mobMenu_list {
+    margin-right: 0;
+    width: auto;
+  }
+  .c_marketplace {
+    margin-right: 0;
+    width: auto;
+  }
+  .cursor {
+    width: 100%;
+    margin-top: 5px;
+    background-size: contain;
+  }
+  .c_game,
+  .marketplace,
+  .c_inventory {
+    width: auto;
+    margin-right: 0;
+  }
+}

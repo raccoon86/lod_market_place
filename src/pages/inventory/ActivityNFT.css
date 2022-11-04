@@ -206,3 +206,10 @@
   background: url("/public/images/inventory/timeline.png") no-repeat top/cover;
   transform: rotate(180deg);
 } */
+
+@media all and (max-width: 1179px) {
+  .main_card_section {
+    width: 100%;
+    margin-top: 43px;
+  }
+}

@@ -352,34 +352,79 @@ export default function Home() {
       <Header cursor="marketplace" />
       <section>
         <div className="container">
-          <span className="welcome_msg">Welcome to the LOD MarketPlace</span>
+          <span className="welcome_msg">
+            Welcome to the
+            <br className="tab_br" />
+            <br className="mob_br" /> LOD MarketPlace
+          </span>
           <span className="sub_msg">
-            Here you can search and buy item to enrich your collection
+            Here you can search and <br className="mob_br" /> buy item to enrich
+            your collection
           </span>
           <div className="nft_info_section">
             <div className="floor_price nft_info_content">
-              <img src="/images/main/left_box.png" alt="left_box" />
+              <picture>
+                <source
+                  media="(min-width:1180px )"
+                  srcset="/images/main/left_box.png"
+                />
+                <source
+                  media="(max-width:1179px )"
+                  srcset="/images/main/left_box.png"
+                />
+                <img src="/images/main/left_box.png" alt="left_box" />
+              </picture>
               <div className="nft_info_wrap">
                 <span className="title">Floor Price</span>
                 <span className="price">150 BUSD</span>
               </div>
             </div>
             <div className="total_volume nft_info_content">
-              <img src="/images/main/left_box.png" alt="left_box" />
+              <picture>
+                <source
+                  media="(min-width:1180px )"
+                  srcset="/images/main/left_box.png"
+                />
+                <source
+                  media="(max-width:1179px )"
+                  srcset="/images/main/left_box.png"
+                />
+                <img src="/images/main/left_box.png" alt="left_box" />
+              </picture>
               <div className="nft_info_wrap">
                 <span className="title">Total Volume</span>
                 <span className="price">150 BUSD</span>
               </div>
             </div>
             <div className="highest_sell_price nft_info_content">
-              <img src="/images/main/left_box.png" alt="left_box" />
+              <picture>
+                <source
+                  media="(min-width:1180px )"
+                  srcset="/images/main/left_box.png"
+                />
+                <source
+                  media="(max-width:1179px )"
+                  srcset="/images/main/left_box.png"
+                />
+                <img src="/images/main/left_box.png" alt="left_box" />
+              </picture>
               <div className="nft_info_wrap">
                 <span className="title">Highest Sell Price</span>
                 <span className="price">150 BUSD</span>
               </div>
             </div>
             <div className="total_listed_count nft_info_content">
-              <img src="/images/main/right_box.png" alt="left_box" />
+              <picture>
+                <source
+                  media="(min-width:1180px )"
+                  srcset="/images/main/left_box.png"
+                />
+                <source
+                  media="(max-width:1179px )"
+                  srcset="/images/main/left_box.png"
+                />
+                <img src="/images/main/left_box.png" alt="left_box" />
+              </picture>
               <div className="nft_info_wrap">
                 <span className="title">Total Listed Count</span>
                 <span className="price">150 BUSD</span>
@@ -390,105 +435,107 @@ export default function Home() {
             {/* 필터 섹션 */}
             <div className="main_filter_section">
               <div className="filter_title">Filters</div>
-              <div className="race_section">
-                <div className="race_title">Race</div>
-                <div className="race_filter_section">
-                  <input
-                    id="ch_beny"
-                    className="beny_checkbox"
-                    type="checkbox"
-                    value="b"
-                    onChange={(e) => checkHandler(e)}
-                  />
-                  <label for="ch_beny">
-                    <div className="beny_badge">
-                      <div className="beny_icon" />
-                    </div>
-                    <div className="beny_title">Beny</div>
-                  </label>
-                  <input
-                    id="ch_arche"
-                    className="arche_chekbox"
-                    type="checkbox"
-                    value="a"
-                    onChange={(e) => checkHandler(e)}
-                  />
-                  <label for="ch_arche">
-                    <div className="arche_badge">
-                      <div className="arche_icon" />
-                    </div>
-                    <div className="arche_title">Arche</div>
-                  </label>
-                  <input
-                    id="ch_luchia"
-                    className="luchia_chekbox"
-                    type="checkbox"
-                    value="l"
-                    onChange={(e) => checkHandler(e)}
-                  />
-                  <label for="ch_luchia">
-                    <div className="luchia_badge">
-                      <div className="luchia_icon"></div>
-                    </div>
-                    <div className="luchia_title">Luchia</div>
-                  </label>
+              <div className="filter_wrap">
+                <div className="race_section">
+                  <div className="race_title">Race</div>
+                  <div className="race_filter_section">
+                    <input
+                      id="ch_beny"
+                      className="beny_checkbox"
+                      type="checkbox"
+                      value="b"
+                      onChange={(e) => checkHandler(e)}
+                    />
+                    <label for="ch_beny">
+                      <div className="beny_badge">
+                        <div className="beny_icon" />
+                      </div>
+                      <div className="beny_title">Beny</div>
+                    </label>
+                    <input
+                      id="ch_arche"
+                      className="arche_chekbox"
+                      type="checkbox"
+                      value="a"
+                      onChange={(e) => checkHandler(e)}
+                    />
+                    <label for="ch_arche">
+                      <div className="arche_badge">
+                        <div className="arche_icon" />
+                      </div>
+                      <div className="arche_title">Arche</div>
+                    </label>
+                    <input
+                      id="ch_luchia"
+                      className="luchia_chekbox"
+                      type="checkbox"
+                      value="l"
+                      onChange={(e) => checkHandler(e)}
+                    />
+                    <label for="ch_luchia">
+                      <div className="luchia_badge">
+                        <div className="luchia_icon"></div>
+                      </div>
+                      <div className="luchia_title">Luchia</div>
+                    </label>
+                  </div>
                 </div>
-              </div>
-              <div className="rarity_section">
-                <div className="rarity_title">Rarity</div>
-                <div className="rarity_filter_section">
-                  <input
-                    id="ch_epic"
-                    className="epic_checkbox"
-                    type="checkbox"
-                    value="e"
-                    onChange={(e) => checkHandler(e)}
-                  />
-                  <label for="ch_epic">
-                    <div className="epic_badge">
-                      <div className="epic_icon"></div>
-                    </div>
-                    <div className="epic_title">Epic</div>
-                  </label>
-                  <input
-                    id="ch_sr"
-                    className="sr_checkbox"
-                    type="checkbox"
-                    value="sr"
-                    onChange={(e) => checkHandler(e)}
-                  />
-                  <label for="ch_sr">
-                    <div className="sr_badge">
-                      <div className="sr_icon"></div>
-                    </div>
-                    <div className="sr_title">Super Rare</div>
-                  </label>
-                  <input
-                    id="ch_r"
-                    className="r_checkbox"
-                    type="checkbox"
-                    value="r"
-                    onChange={(e) => checkHandler(e)}
-                  />
-                  <label for="ch_r">
-                    <div className="r_badge">
-                      <div className="r_icon"></div>
-                    </div>
-                    <div className="r_title">Rare</div>
-                  </label>
-                  <input
-                    id="ch_n"
-                    className="n_checkbox"
-                    type="checkbox"
-                    value="n"
-                    onChange={(e) => checkHandler(e)}
-                  />
-                  <label for="ch_n">
-                    <div className="n_badge">
-                      <div className="n_icon"></div>
-                    </div>
-                    <div className="n_title">Normal</div>
-                  </label>
+                <div className="rarity_section">
+                  <div className="rarity_title">Rarity</div>
+                  <div className="rarity_filter_section">
+                    <input
+                      id="ch_epic"
+                      className="epic_checkbox"
+                      type="checkbox"
+                      value="e"
+                      onChange={(e) => checkHandler(e)}
+                    />
+                    <label for="ch_epic">
+                      <div className="epic_badge">
+                        <div className="epic_icon"></div>
+                      </div>
+                      <div className="epic_title">Epic</div>
+                    </label>
+                    <input
+                      id="ch_sr"
+                      className="sr_checkbox"
+                      type="checkbox"
+                      value="sr"
+                      onChange={(e) => checkHandler(e)}
+                    />
+                    <label for="ch_sr">
+                      <div className="sr_badge">
+                        <div className="sr_icon"></div>
+                      </div>
+                      <div className="sr_title">Super Rare</div>
+                    </label>
+                    <input
+                      id="ch_r"
+                      className="r_checkbox"
+                      type="checkbox"
+                      value="r"
+                      onChange={(e) => checkHandler(e)}
+                    />
+                    <label for="ch_r">
+                      <div className="r_badge">
+                        <div className="r_icon"></div>
+                      </div>
+                      <div className="r_title">Rare</div>
+                    </label>
+                    <input
+                      id="ch_n"
+                      className="n_checkbox"
+                      type="checkbox"
+                      value="n"
+                      onChange={(e) => checkHandler(e)}
+                    />
+                    <label for="ch_n">
+                      <div className="n_badge">
+                        <div className="n_icon"></div>
+                      </div>
+                      <div className="n_title">Normal</div>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
