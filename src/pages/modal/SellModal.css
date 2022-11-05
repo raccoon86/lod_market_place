@@ -1,121 +1,210 @@
 .modal_section {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
 }
 
 .modal_section .modal_wrap {
-    width: 976px;
-    height: auto;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
+  width: 976px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 
-.modal_section .modal_wrap .modal_close{
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
-    text-align: center;
-    justify-items: center;
-    align-items: center;
+.modal_section .modal_wrap .modal_close {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .modal_section .modal_wrap .modal_close .close_text {
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 38px;
-    color: #FFFFFF;
-    text-shadow: 3.26154px 3.26154px 8.15385px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding-bottom: 5px;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 38px;
+  color: #ffffff;
+  text-shadow: 3.26154px 3.26154px 8.15385px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding-bottom: 5px;
 }
 
 .modal_section .modal_wrap .modal_close .close_icon {
-    width: 44px;
-    height: 44px;
-    background: url('/public/images/modal/ic_close.png') center/cover;
+  width: 44px;
+  height: 44px;
+  background: url("/public/images/modal/ic_close.png") center/cover;
 }
 
 .modal_section .modal_wrap .modal_body {
-    width: 100%;
-    height: 615px;
-    background: #1F2333;
-    padding-top: 85px;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
+  width: 100%;
+  height: 615px;
+  background: #1f2333;
+  padding-top: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #e2dac269;
 }
 
 .modal_wrap .modal_body .modal_title {
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 38px;
-    line-height: 56px;
-    color: #FFFFFF;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 56px;
+  color: #ffffff;
 }
 
 .modal_wrap .modal_body .price_section {
-    display: flex;
-    margin-top: 52px;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  margin-top: 52px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
 }
 
 .modal_wrap .modal_body .price_section .icon_price {
-    width: 46px;
-    height: 46px;
-    margin-right: 10px;
-    background: url('/public/images/game/ic_token.png') center/cover;
+  width: 46px;
+  height: 46px;
+  margin-right: 10px;
+  background: url("/public/images/game/ic_token.png") center/cover;
 }
 
 .modal_wrap .modal_body .price_section .price {
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 38px;
-    line-height: 56px;
-    color: #FFFFFF;
-    padding-bottom: 5px;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 56px;
+  color: #ffffff;
+  padding-bottom: 5px;
 }
 
 .modal_wrap .modal_body .info {
-    margin-top: 70px;
-    width: 710px;
-    height: auto;
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 25px;
-    color: #9EA2B2;
+  margin-top: 70px;
+  width: 710px;
+  height: auto;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+  color: #9ea2b2;
 }
 
 .modal_wrap .modal_body .info span {
-    color: #FFF185;
+  color: #fff185;
 }
 
 .modal_wrap .modal_body .button_sell {
-    margin-top: 110px;
-    width: 400px;
-    height: 78px;
-    background: url('/public/images/modal/btn_sell.png') center/cover;
+  width: 400px;
+  height: 78px;
+  margin-top: 50px;
+  background: url("/public/images/modal/btn_sell.png") center/cover;
+}
+.modal_imgs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.modal_imgs img {
+  position: absolute;
+}
+.modal_obj-topright {
+  top: 40px;
+  right: -5px;
+}
+.modal_obj-topleft {
+  top: 40px;
+  left: -5px;
+  transform: rotate(-90deg);
+}
+.modal_obj-bottomright {
+  bottom: -5px;
+  right: -5px;
+  transform: rotate(90deg);
+}
+.modal_obj-bottomleft {
+  bottom: -5px;
+  left: -5px;
+  transform: rotate(180deg);
+}
+
+@media all and (max-width: 1179px) {
+  .modal_obj-topright {
+    top: 40px;
+    right: 4.5%;
+  }
+  .modal_obj-topleft {
+    top: 40px;
+    left: 4.5%;
+    transform: rotate(-90deg);
+  }
+  .modal_obj-bottomright {
+    bottom: -5px;
+    right: 4.5%;
+    transform: rotate(90deg);
+  }
+  .modal_obj-bottomleft {
+    bottom: -5px;
+    left: 4.5%;
+    transform: rotate(180deg);
+  }
+}
+@media all and (max-width: 767px) {
+  .modal_wrap .modal_body .modal_title {
+    font-size: 20px;
+  }
+  .modal_wrap .modal_body .info {
+    width: 100%;
+  }
+  .modal_wrap .modal_body .price_section .icon_price {
+    width: 25px;
+    height: 25px;
+  }
+  .modal_wrap .modal_body .price_section .price {
+    font-size: 17px;
+  }
+  .modal_wrap .modal_body .info {
+    font-size: 15px;
+  }
+  .modal_section .modal_wrap {
+    width: 100%;
+  }
+  .modal_wrap .modal_body .button_sell {
+    width: 210px;
+    height: 40px;
+    margin-top: 20px;
+  }
+  .modal_wrap .modal_body .price_section {
+    margin-top: 0px;
+  }
+  .modal_wrap .modal_body .info {
+    margin-top: 0;
+  }
+  .modal_section .modal_wrap .modal_close .close_icon {
+    width: 30px;
+    height: 30px;
+  }
 }

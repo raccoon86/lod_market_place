@@ -89,7 +89,7 @@ img {
 @media all and (max-width: 767px) {
   .container {
     max-width: 420px;
-    padding: 60px 20px;
+    padding: 120px 20px;
   }
   .tab_br {
     display: none;

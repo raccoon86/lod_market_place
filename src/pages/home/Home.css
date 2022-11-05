@@ -413,6 +413,9 @@ input[id="ch_luchia"]:hover + label .luchia_title {
 }
 .filter_wrap {
   margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 .rarity_section {
   display: flex;
@@ -434,6 +437,7 @@ input[id="ch_luchia"]:hover + label .luchia_title {
   display: flex;
   margin-top: 15px;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 input[id="ch_epic"] + label {
@@ -660,6 +664,7 @@ input[id="ch_n"]:hover + label .n_title {
   background: #1f2333;
   border-radius: 20px;
   padding: 30px;
+  gap: 40px;
 }
 
 .sort_section {
@@ -719,7 +724,7 @@ select::-ms-expand {
 .main_card_section .card_section {
   height: 100%;
   margin-top: 35px;
-  margin-bottom: 40px;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -934,7 +939,6 @@ select::-ms-expand {
   .filter_wrap {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
   }
   .race_section,
   .rarity_section {

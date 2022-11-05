@@ -17,8 +17,8 @@ function Detail() {
   };
 
   const navToHome = () => {
-    navigator("/")
-  }
+    navigator("/");
+  };
 
   return (
     <div className="main">
@@ -27,7 +27,8 @@ function Detail() {
         <div className="container">
           <span className="welcome_msg">Welcome to the LOD MarketPlace</span>
           <span className="sub_msg">
-            Here you can search and buy item to enrich your collection
+            Here you can search and
+            <br className="mob_br" /> buy item to enrich your collection
           </span>
 
           <div className="detail_card_section">
@@ -67,9 +68,13 @@ function Detail() {
                 </div>
                 <React.Fragment>
                   <div className="button_buy_section">
-                    <div onClick={ openModal } className="button_buy" />
+                    <div onClick={openModal} className="button_buy" />
                   </div>
-                  <Modal open={modalOpen} close={closeModal} header="Modal heading"/>
+                  <Modal
+                    open={modalOpen}
+                    close={closeModal}
+                    header="Modal heading"
+                  />
                 </React.Fragment>
               </div>
             </div>
@@ -81,5 +86,4 @@ function Detail() {
   );
 }
 
-
-export default Detail
+export default Detail;

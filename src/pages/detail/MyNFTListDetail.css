@@ -140,23 +140,23 @@
 }
 
 .attribute_section {
-  height: 50px;
   margin-top: 20px;
   display: flex;
   align-items: center;
+  height: auto;
 }
 
 .attribute_section .attribute_title {
-  height: 50px;
   font-family: "Noto Sans CJK KR";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+
+  height: auto;
   color: #9ea2b3;
   margin-right: 17px;
+  padding-top: 0;
   display: table-cell;
-  padding-top: 20px;
 }
 
 .attribute_section .attribute_level {
@@ -259,4 +259,40 @@
   line-height: 33px;
 
   color: #472716;
+}
+.sub_msg {
+  display: block;
+}
+@media all and (max-width: 1179px) {
+  .detail_card {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+  .character_image {
+    height: 891px;
+    width: 100%;
+  }
+  .button_buy_section {
+    justify-content: center;
+  }
+  .button_280 {
+    position: relative;
+    width: 100%;
+  }
+  .button_280 .button_280_bg,
+  .button_280 .button_280_body {
+    width: 100%;
+  }
+}
+@media all and (max-width: 767px) {
+  .character_image {
+    height: 392px;
+  }
+  .detail_character_info {
+    padding: 40px 14px;
+  }
+  .wallet_section .wallet_address_section {
+    height: auto;
+  }
 }
