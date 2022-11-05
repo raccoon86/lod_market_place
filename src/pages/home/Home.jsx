@@ -8,9 +8,8 @@ function Home() {
   const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(12);
   const [page, setPage] = useState(1);
-  const [Selected, setSelected] = useState("");
+  const [selectedItem, setSelected] = useState("recent");
   const [checkedItems, setCheckedItems] = useState([]);
-  const [subCkedItems, setSubCheckedItems] = useState([]);
   const offset = (page - 1) * limit;
   const [count, setCount] = useState(1);
 
@@ -27,8 +26,47 @@ function Home() {
   }, [checkedItems]);
 
   useEffect(() => {
+    console.log("실행1");
+
+    orderByPosts(selectedItem);
     console.log(posts);
   }, [posts]);
+
+  useEffect(() => {
+    // console.log(posts);
+    // orderByPosts(selectedItem);
+  }, [selectedItem]);
+
+  const orderByPosts = (orderBy) => {
+    console.log("sorting 시작");
+    var orderByData;
+    if (orderBy == "recent") {
+      orderByData = posts.sort((a, b) => {
+        if (new Date(a.created_at) < new Date(b.created_at)) return -1;
+        if (new Date(a.created_at) > new Date(b.created_at)) return 1;
+        return 0;
+      });
+    } else if (orderBy == "oldest") {
+      orderByData = posts.sort((a, b) => {
+        if (new Date(a.created_at) < new Date(b.created_at)) return 1;
+        if (new Date(a.created_at) > new Date(b.created_at)) return -1;
+        return 0;
+      });
+    } else if (orderBy == "high") {
+      orderByData = posts.sort((a, b) => {
+        if (a.price < b.price) return -1;
+        if (a.price > b.price) return 1;
+        return 0;
+      });
+    } else if (orderBy == "low") {
+      orderByData = posts.sort((a, b) => {
+        if (a.price < b.price) return 1;
+        if (a.price > b.price) return -1;
+        return 0;
+      });
+    }
+    setPosts(orderByData);
+  };
 
   const checkedItemHandler = (sortType, value, isChecked) => {
     if (isChecked) {
@@ -50,7 +88,6 @@ function Home() {
     if (checkedItems.length === 0) {
       setPosts([]);
     } else {
-      console.log(checkedItems);
       if (
         checkedItems.find((res) => res.sortType === "race") &&
         checkedItems.find((res) => res.sortType === "rarity")
@@ -85,32 +122,13 @@ function Home() {
         });
       }
     }
-    // checkedItems.map((sortType) => {
-    //   if (sortType === "b" || sortType === "a" || sortType === "l") {
-    //     const result = cardData.filter((cards) => cards.race === sortType);
-    //     result.map((res) => {
-    //       resultList.push(res);
-    //     });
-    //   }
-
-    // if (
-    //   sortType === "e" ||
-    //   sortType === "sr" ||
-    //   sortType === "r" ||
-    //   sortType === "n"
-    // ) {
-    //   console.log(`정렬 타입 ${sortType}`);
-    //   const result = resultList.filter((cards) => cards.rarity === sortType);
-    //   result.map((res) => {
-    //     resultList.push(res);
-    //   });
-    // }
-    // });
+    console.log("실행0");
     setPosts([...new Set(resultList)]);
   };
 
   const handleSelect = (e) => {
     setSelected(e.target.value);
+    orderByPosts(e.target.value);
   };
 
   return (
@@ -328,7 +346,7 @@ function Home() {
                   <select
                     className="select"
                     onChange={handleSelect}
-                    value={Selected}
+                    value={selectedItem}
                   >
                     <option value="recent">Recent</option>
                     <option value="oldest">Oldest</option>
@@ -339,7 +357,6 @@ function Home() {
               </div>
               <div className="card_section">
                 {/* {content} */}
-
                 {posts.length !== 0 &&
                   posts
                     .slice(offset, offset + limit)
