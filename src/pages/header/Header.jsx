@@ -5,18 +5,12 @@ import "./Header.css";
 function Header(props) {
   const [menu, setMenu] = useState("");
   const [mobMenu, setMobMenu] = useState(true);
-  useEffect(() => {
-    if (menu === "home") {
-      console.log("goToHome");
-    } else if (menu === "game") {
-      console.log("goToGame");
-    } else if (menu === "inventory") {
-      console.log("goToInventory");
-    }
-  }, []);
-
+  const [isActive, setIsActive] = useState(false);
   const navigator = useNavigate();
 
+  useEffect(() => {
+    console.log(isActive);
+  }, [isActive]);
   const goToHome = () => {
     navigator("/");
   };
@@ -27,6 +21,10 @@ function Header(props) {
 
   const goToInventory = () => {
     navigator("/inventory");
+  };
+
+  const setActive = () => {
+    setIsActive(!isActive);
   };
   // console.log(`현재 위치 ${props.cursor}`);
   return (
@@ -79,17 +77,34 @@ function Header(props) {
         </div>
       )}
       <a className="wallet menu_list"></a>
-      <div className="mobMenu_btn">
-        <div className="mobMenu_btn_list"></div>
-        <div className="mobMenu_btn_list"></div>
-        <div className="mobMenu_btn_list"></div>
+      <div
+        className="mobMenu_btn"
+        onClick={() => {
+          setActive();
+        }}
+      >
+        <div
+          className={
+            isActive === true ? "mobMenu_btn_list active" : "mobMenu_btn_list"
+          }
+        ></div>
+        <div
+          className={
+            isActive === true ? "mobMenu_btn_list active" : "mobMenu_btn_list"
+          }
+        ></div>
+        <div
+          className={
+            isActive === true ? "mobMenu_btn_list active" : "mobMenu_btn_list"
+          }
+        ></div>
       </div>
 
       {/* 모바일메뉴 */}
-      <div className="mobMenu">
+      <div className={isActive === true ? "mobMenu active" : "mobMenu"}>
         <div className="mobMenu_wrap">
           {props.cursor === "marketplace" ? (
-            <div className="cursor_section mobMenu_list active">
+            <div className="cursor_section mobMenu_list">
               {" "}
               <div className="c_marketplace" onClick={goToHome}>
                 MARKETPLACE
@@ -108,7 +123,7 @@ function Header(props) {
             COMMING <br className="mob_br" /> SOON
           </a>
           {props.cursor === "game" ? (
-            <div className="cursor_section mobMenu_list active">
+            <div className="cursor_section mobMenu_list">
               <div className="c_game" onClick={goToGame}>
                 GAME
               </div>{" "}
@@ -120,7 +135,7 @@ function Header(props) {
             </div>
           )}
           {props.cursor === "document" ? (
-            <div className="cursor_section mobMenu_list active">
+            <div className="cursor_section mobMenu_list">
               <div className="c_document">DOCUMENT</div>{" "}
               <p className="cursor" />{" "}
             </div>
@@ -128,7 +143,7 @@ function Header(props) {
             <div className="document mobMenu_list">DOCUMENT</div>
           )}
           {props.cursor === "inventory" ? (
-            <div className="cursor_section mobMenu_list active">
+            <div className="cursor_section mobMenu_list">
               <div className="c_inventory" onClick={goToInventory}>
                 INVENTORY
               </div>{" "}

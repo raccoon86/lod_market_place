@@ -51,9 +51,6 @@
 .character_image {
   width: 482px;
   height: 590px;
-  background: url("/public/images/card/card_01.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .detail_character_info {
