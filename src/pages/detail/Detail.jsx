@@ -75,13 +75,8 @@ function Detail() {
                 </div>
                 <React.Fragment>
                   <div className="button_buy_section">
-                    <div onClick={openModal} className="button_buy" />
+                    <div onClick={navToHome} className="button_buy" />
                   </div>
-                  <Modal
-                    open={modalOpen}
-                    close={closeModal}
-                    header="Modal heading"
-                  />
                 </React.Fragment>
               </div>
             </div>

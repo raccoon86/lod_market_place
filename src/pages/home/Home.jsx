@@ -7,6 +7,7 @@ import { cardData } from "../../data/Card";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Home() {
+  const location = useLocation();
   const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(12);
   const [page, setPage] = useState(1);
@@ -15,26 +16,13 @@ function Home() {
   const offset = (page - 1) * limit;
   const navigator = useNavigate();
 
-  const location = useLocation();
-
-  // useEffect(() => {
-  //   // setCount(count + 1);
-  //   console.log(`체크 값 : ${checkedItems} || 순서 : ${count}`);
-  //   // setPostHandler(checkedItems);
-  //   // setPosts(posts);
-  // });
-
   useEffect(() => {
     // console.log(checkedItems);
     setPostHandler(checkedItems);
-    console.log(location.state);
   }, [checkedItems]);
 
   useEffect(() => {
-    console.log("실행1");
-
     orderByPosts(selectedItem);
-    console.log(posts);
   }, [posts]);
 
   useEffect(() => {
@@ -43,7 +31,6 @@ function Home() {
   }, [selectedItem]);
 
   const orderByPosts = (orderBy) => {
-    console.log("sorting 시작");
     var orderByData;
     if (orderBy == "recent") {
       orderByData = posts.sort((a, b) => {
@@ -104,7 +91,6 @@ function Home() {
             raceList.push(res);
           });
         });
-
         checkedItems.map(({ sortType, value }) => {
           const result = raceList.filter((res) => res.rarity == value);
           result.map((res) => {
@@ -127,7 +113,7 @@ function Home() {
         });
       }
     }
-    console.log("실행0");
+
     setPosts([...new Set(resultList)]);
   };
 
