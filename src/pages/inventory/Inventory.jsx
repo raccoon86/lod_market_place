@@ -278,8 +278,6 @@ export default function Inventory() {
   const [tab, setTab] = useState(initTab);
   const [posts, setPosts] = useState([cards]);
 
-  console.log(tab);
-
   // useEffect(() => {
   //     // setPostHandler(checkedItems);
   //     // setPosts(cards);

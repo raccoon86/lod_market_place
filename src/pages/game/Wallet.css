@@ -1,163 +1,217 @@
 .info_section {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 830px;
-    background: #161929;
-    border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 830px;
+  background: #161929;
+  border-radius: 20px;
 }
 
 .info_section .wallet_info_section {
-    padding: 30px;
-    justify-content: flex-start;
-    justify-items: flex-start;
-    align-items: flex-start;
+  padding: 30px;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  align-items: flex-start;
 }
 
 .info_section .wallet_info_section .wallet_connect_section {
-    display: flex;
-    width: 764px;
-    height: 330px;
-    margin-top: 25px;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
+  display: flex;
+  width: 764px;
+  height: 330px;
+  margin-top: 25px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .info_section .wallet_info_section .wallet_token_section {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    justify-items: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
 }
 
 .info_section .wallet_info_section .wallet_token_section .token_title_section {
-    display: flex;
-    justify-items: center;
-    align-items: center;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
-.info_section .wallet_info_section .wallet_token_section .token_title_section span{
-    font-family: 'ITC New Baskerville';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 34px;
-    line-height: 42px;
-    display: flex;
-    align-items: center;
-    color: #D3CBAF;
+.info_section
+  .wallet_info_section
+  .wallet_token_section
+  .token_title_section
+  span {
+  font-family: "ITC New Baskerville";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  color: #d3cbaf;
 }
 
 .info_section .wallet_info_section .wallet_token_section .btn_sync {
-    width: 67px;
-    height: 29px;
-    background: url('/public/images/game/ic_sync.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-right: 20px;
+  width: 67px;
+  height: 29px;
+  background: url("/public/images/game/ic_sync.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 20px;
 }
 
 .info_section .wallet_info_section .deposit_info_section {
-    display: flex;
-    flex-direction: row;
-    margin-top: 12px;
-    align-items: center;
-    padding: 20px;
-    height: 20px;
-    width: 709px;
-    margin-right: 40px;
-    background: #1F2333;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+  align-items: center;
+  padding: 0;
+  justify-content: space-around;
+  width: 100%;
+  background: #1f2333;
+  border-radius: 10px;
 }
 
 .info_section .wallet_info_section .deposit_lort_section {
-    display: flex;
-    width: auto;
-    height: 100%;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
+  display: flex;
+
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 }
 .info_section .wallet_info_section .deposit_lort_section .lort_title {
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 27px;
-    color: #FFFFFF;
-    margin-right: 40px;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ffffff;
+  margin-right: 40px;
 }
 
 .info_section .wallet_info_section .deposit_lort_section .lort_result {
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 27px;
-    color: #F0B90B;
-    margin-right: 27px;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  color: #f0b90b;
+  margin-right: 27px;
 }
 
-.info_section .wallet_info_section .deposit_lort_section .button_deposit {
-    width: 111px;
-    height: 45px;
-    background: url('/public/images/game/btn_deposit.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-right: 7px;
+.info_section .wallet_info_section .deposit_lort_section .button_deposit,
+.info_section .wallet_info_section .deposit_logt_section .button_deposit {
+  width: 111px;
+  font-family: "Noto Sans CJK KR";
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1e4b6;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #472716;
 }
 
 .info_section .wallet_info_section .deposit_logt_section {
-    display: flex;
-    width: auto;
-    height: 100%;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
+  display: flex;
+
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 }
 .info_section .wallet_info_section .deposit_logt_section .logt_title {
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 27px;
-    color: #FFFFFF;
-    margin-right: 40px;
-    margin-left: 21px;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ffffff;
+  margin-right: 40px;
+  margin-left: 21px;
 }
 
 .info_section .wallet_info_section .deposit_logt_section .logt_result {
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 27px;
-    color: #F0B90B;
-    margin-right: 27px;
-}
-
-.info_section .wallet_info_section .deposit_logt_section .button_deposit {
-    width: 111px;
-    height: 45px;
-    background: url('/public/images/game/btn_deposit.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  color: #f0b90b;
+  margin-right: 27px;
 }
 
 .info_section .wallet_info_section .acccount_line {
-    width: 2px;
-    height: 60px;
-    background: url('/public/images/game/account_line.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+  width: 2px;
+  height: 60px;
+  background: url("/public/images/game/account_line.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .game_info_container .info_section .nft_section .button_deposit {
-    width: 144px;
-    height: 31px;
-    margin-top: 5px;
-    background: url('/public/images/game/button_deposit.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 100%;
+  height: 31px;
+  margin-top: 5px;
+  background-color: #f1e4b6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button_deposit p {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Noto Sans CJK KR";
+  color: #472716;
+}
+
+@media all and (max-width: 1179px) {
+  /* account */
+  .info_section {
+    width: 100%;
   }
+  .info_section .wallet_info_section .acccount_line {
+    display: none;
+  }
+  .button_deposit p {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: "Noto Sans CJK KR";
+    color: #472716;
+  }
+  .info_section .wallet_info_section .deposit_info_section {
+    flex-direction: column;
+    gap: 10px;
+    background-color: transparent;
+  }
+  .info_section .wallet_info_section .deposit_logt_section .logt_title {
+    margin-left: 0;
+  }
+  .info_section .wallet_info_section .deposit_lort_section,
+  .info_section .wallet_info_section .deposit_logt_section {
+    width: 100%;
+    background-color: #1f2333;
+    border-radius: 10px;
+  }
+}
+@media all and (max-width: 767px) {
+  .info_section .wallet_info_section .deposit_lort_section,
+  .info_section .wallet_info_section .deposit_logt_section {
+    justify-content: space-around;
+  }
+  .info_section .wallet_info_section .deposit_lort_section .lort_title,
+  .info_section .wallet_info_section .deposit_lort_section .lort_result,
+  .info_section .wallet_info_section .deposit_logt_section .logt_title,
+  .account_info_section .wallet_info_section .account_logt_section .logt_title,
+  .info_section .wallet_info_section .deposit_logt_section .logt_result {
+    font-size: 16px;
+    margin-right: 0;
+  }
+  .info_section .wallet_info_section {
+    padding: 30px 10px;
+  }
+}
