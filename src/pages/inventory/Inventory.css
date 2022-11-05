@@ -1,14 +1,22 @@
 input[type="radio"] {
   display: none;
 }
-
-.inventory_container {
+.main {
+}
+/* .inventory_container {
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(360deg, #0b0e1c 13.27%, rgba(11, 14, 28, 0) 100%),
-    url("/public/images/inventory/bg_inventory.png");
+ 
   background-size: 100%, 100%, cover;
   background-repeat: no-repeat, no-repeat;
+} */
+.main.invenbg {
+  background: url("/public/images/inventory/bg_inventory.png") no-repeat
+    top/cover;
+  background-color: #0b0e1c;
+}
+section {
+  background: transparent;
 }
 .main_card_section .card_section .nft_card {
   width: 100%;
@@ -17,7 +25,6 @@ input[type="radio"] {
   background-position: center;
 }
 .my_nft_msg {
-  margin-top: 100px;
   justify-content: center;
   justify-items: center;
   font-family: "ITC New Baskerville";
@@ -170,6 +177,11 @@ input[id="ch_activity"]:checked + label .activity_title {
 }
 
 @media all and (max-width: 1179px) {
+  .main.invenbg {
+    background: url("/public/images/inventory/bg_inventory.png") no-repeat
+      top/contain;
+    background-color: #0b0e1c;
+  }
   .inventory_container .my_nft_container .my_nft_list_section {
     background-color: transparent;
     padding: 0;

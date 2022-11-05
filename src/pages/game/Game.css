@@ -1,12 +1,12 @@
-.main {
-  background-image: url("/public/images/game/bg_game.png") !important;
+.main.gamebg {
+  background: url("/public/images/game/bg_game.png") no-repeat top/cover;
+  background-color: #0b0e1c;
 }
 .game_section {
   width: 100%;
 }
 
 .game_msg {
-  margin-top: 100px;
   justify-content: center;
   justify-items: center;
   font-family: "ITC New Baskerville";
@@ -717,6 +717,10 @@ input[id="ch_wallet"]:checked + label .wallet_title {
 }
 
 @media all and (max-width: 1179px) {
+  .main.gamebg {
+    background: url("/public/images/game/bg_game.png") no-repeat top/contain;
+    background-color: #0b0e1c;
+  }
   .game_info_container {
     width: 100%;
     flex-direction: column;

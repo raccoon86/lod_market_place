@@ -36,7 +36,7 @@ html {
 
 .container {
   width: 100%;
-  padding: 90px 0;
+  padding-top: 240px;
   max-width: 1180px;
   min-height: 100vh;
   margin: 0 auto;
@@ -64,7 +64,7 @@ img {
 @media all and (max-width: 1179px) {
   .container {
     width: 100%;
-    padding: 120px 20px;
+    padding: 120px 20px 0 20px;
     max-width: 728px;
     min-height: 100vh;
     margin: 0 auto;
@@ -89,7 +89,6 @@ img {
 @media all and (max-width: 767px) {
   .container {
     max-width: 420px;
-    padding: 120px 20px;
   }
   .tab_br {
     display: none;

@@ -284,7 +284,7 @@ const Game = () => {
   ];
 
   return (
-    <div className="main">
+    <div className="main gamebg">
       <Header cursor="game" />
       <div className="game_section">
         <div className="container">

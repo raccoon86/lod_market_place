@@ -5,14 +5,13 @@ input[type="checkbox"] {
 .main {
   width: 100%;
   height: auto;
-  background: #0b0e1c;
+  background: url("/public/images/main/login_03_fin.png") no-repeat top/cover;
+  background-color: #0b0e1c;
 }
 
 section {
   width: 100%;
   min-height: 100vh;
-
-  background: url("/public/images/main/login_03_fin.png") no-repeat center/cover;
 }
 .welcome_msg {
   justify-content: center;
@@ -889,12 +888,10 @@ select::-ms-expand {
 }
 
 @media all and (max-width: 1179px) {
-  section {
-    width: 100%;
-    min-height: 100vh;
-
+  .main {
     background: url("/public/images/main/login_03_fin.png") no-repeat
       top/contain;
+    background-color: #0b0e1c;
   }
   .welcome_msg {
     font-size: 56px;
