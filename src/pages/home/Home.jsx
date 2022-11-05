@@ -4,6 +4,8 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Pagination from "../pagination/Pagination";
 import { cardData } from "../../data/Card";
+import { useLocation, useNavigate } from "react-router-dom";
+
 function Home() {
   const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(12);
@@ -11,7 +13,9 @@ function Home() {
   const [selectedItem, setSelected] = useState("recent");
   const [checkedItems, setCheckedItems] = useState([]);
   const offset = (page - 1) * limit;
-  const [count, setCount] = useState(1);
+  const navigator = useNavigate();
+
+  const location = useLocation();
 
   // useEffect(() => {
   //   // setCount(count + 1);
@@ -23,6 +27,7 @@ function Home() {
   useEffect(() => {
     // console.log(checkedItems);
     setPostHandler(checkedItems);
+    console.log(location.state);
   }, [checkedItems]);
 
   useEffect(() => {
@@ -129,6 +134,10 @@ function Home() {
   const handleSelect = (e) => {
     setSelected(e.target.value);
     orderByPosts(e.target.value);
+  };
+
+  const goToDetailCard = (id) => {
+    navigator(`/detail/${id}`, { state: { id: id, sortType: checkedItems } });
   };
 
   return (
@@ -366,6 +375,7 @@ function Home() {
                           <div
                             className="nft_card_info"
                             style={{ backgroundImage: `url("${url}")` }}
+                            onClick={() => goToDetailCard(id)}
                           >
                             <div className="nft_card_gradient">
                               {rarity === "e" && (

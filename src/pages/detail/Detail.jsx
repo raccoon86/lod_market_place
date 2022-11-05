@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Modal from "../modal/SellModal";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { cardData } from "../../data/Card";
 
 function Detail() {
   const navigator = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
+  const location = useLocation();
 
   const openModal = () => {
     setModalOpen(true);
@@ -17,9 +19,10 @@ function Detail() {
   };
 
   const navToHome = () => {
-    navigator("/")
-  }
+    navigator("/", { state: { sortType: location.state.sortType } });
+  };
 
+  const data = cardData.filter((res) => res.id === location.state.id);
   return (
     <div className="main">
       <Header />
@@ -36,10 +39,10 @@ function Detail() {
               <span>Back</span>
             </div>
             <div className="detail_card">
-              <div className="character_image" />
+              <img className="character_image" src={data[0].url} />
               <div className="detail_character_info">
                 <div className="character_name_section">
-                  <span className="name">Fated Judge</span>{" "}
+                  <span className="name">{data[0].name}</span>{" "}
                   <span className="code_number">#3390</span>
                 </div>
                 <div className="wallet_section">
@@ -59,7 +62,11 @@ function Detail() {
                   <span className="price_title">Listing Price</span>
                   <div className="price_section">
                     <div className="coin"></div>
-                    <span className="price">2,000</span>
+                    <span className="price">
+                      {data[0].price
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                    </span>
                   </div>
                   <span className="price_info">
                     3% transaction fee will be paid when the sale is completed.
@@ -67,9 +74,13 @@ function Detail() {
                 </div>
                 <React.Fragment>
                   <div className="button_buy_section">
-                    <div onClick={ openModal } className="button_buy" />
+                    <div onClick={openModal} className="button_buy" />
                   </div>
-                  <Modal open={modalOpen} close={closeModal} header="Modal heading"/>
+                  <Modal
+                    open={modalOpen}
+                    close={closeModal}
+                    header="Modal heading"
+                  />
                 </React.Fragment>
               </div>
             </div>
@@ -81,5 +92,4 @@ function Detail() {
   );
 }
 
-
-export default Detail
+export default Detail;
