@@ -48,7 +48,7 @@
 .cursor {
   width: 100px;
   height: 5px;
-  background: url("/public/images/main/under_line.png") center/cover;
+  background: url("/public/images/main/under_line.png") no-repeat center/cover;
 }
 
 .comming {
@@ -179,8 +179,11 @@
   }
   .cursor {
     width: 100%;
+    height: 7px;
     margin-top: 5px;
-    background-size: contain;
+
+    background: url("/public/images/main/under_line.png") no-repeat
+      center/contain;
   }
   .c_game,
   .marketplace,
