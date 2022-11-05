@@ -3,286 +3,35 @@ import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Pagination from "../pagination/Pagination";
-
-export default function Home() {
-  const cards = [
-    {
-      id: 1,
-      name: "Fated Judge",
-      race: "b",
-      rarity: "e",
-      price: 502,
-      url: "/images/card/card_01.png",
-    },
-    {
-      id: 2,
-      name: "Son of the Wind",
-      race: "a",
-      rarity: "e",
-      price: 502,
-      url: "/images/card/card_02.png",
-    },
-    {
-      id: 3,
-      name: "Queen of the Night",
-      race: "l",
-      rarity: "e",
-      price: 502,
-      url: "/images/card/card_03.png",
-    },
-    {
-      id: 4,
-      name: "Devastator",
-      race: "b",
-      rarity: "e",
-      price: 502,
-      url: "/images/card/card_04.png",
-    },
-    {
-      id: 5,
-      name: "Storm Crow",
-      race: "b",
-      rarity: "sr",
-      price: 502,
-      url: "/images/card/card_05.png",
-    },
-    {
-      id: 6,
-      name: "Director",
-      race: "a",
-      rarity: "sr",
-      price: 502,
-      url: "/images/card/card_06.png",
-    },
-    {
-      id: 7,
-      name: "Night Watcher",
-      race: "l",
-      rarity: "sr",
-      price: 502,
-      url: "/images/card/card_07.png",
-    },
-    {
-      id: 8,
-      name: "Silver Knight",
-      race: "b",
-      rarity: "sr",
-      price: 502,
-      url: "/images/card/card_08.png",
-    },
-    {
-      id: 9,
-      name: "God of Death",
-      race: "b",
-      rarity: "sr",
-      price: 502,
-      url: "/images/card/card_09.png",
-    },
-    {
-      id: 10,
-      name: "Demon Hunter",
-      race: "a",
-      rarity: "sr",
-      price: 502,
-      url: "/images/card/card_10.png",
-    },
-    {
-      id: 11,
-      name: "Whisper of Dawn",
-      race: "l",
-      rarity: "sr",
-      price: 502,
-      url: "/images/card/card_11.png",
-    },
-    {
-      id: 12,
-      name: "Forest Guardian",
-      race: "b",
-      rarity: "sr",
-      price: 502,
-      url: "/images/card/card_12.png",
-    },
-    {
-      id: 13,
-      name: "Wind Warrior",
-      race: "b",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_13.png",
-    },
-    {
-      id: 14,
-      name: "High Ranking Knight",
-      race: "a",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_14.png",
-    },
-    {
-      id: 15,
-      name: "Swordsman",
-      race: "l",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_15.png",
-    },
-    {
-      id: 16,
-      name: "Water Purification",
-      race: "b",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_16.png",
-    },
-    {
-      id: 17,
-      name: "Assassin",
-      race: "b",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_17.png",
-    },
-    {
-      id: 18,
-      name: "Wizard",
-      race: "a",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_18.png",
-    },
-    {
-      id: 19,
-      name: "Water Spirit",
-      race: "l",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_19.png",
-    },
-    {
-      id: 20,
-      name: "Sanctuary Guardian",
-      race: "b",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_20.png",
-    },
-    {
-      id: 21,
-      name: "Hunter",
-      race: "b",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_21.png",
-    },
-    {
-      id: 22,
-      name: "Pioneer",
-      race: "a",
-      rarity: "r",
-      price: 502,
-      url: "/images/card/card_22.png",
-    },
-    {
-      id: 23,
-      name: "Messenger",
-      race: "l",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_23.png",
-    },
-    {
-      id: 24,
-      name: "Scout",
-      race: "b",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_24.png",
-    },
-    {
-      id: 25,
-      name: "Lookout",
-      race: "l",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_25.png",
-    },
-    {
-      id: 26,
-      name: "Spearhead",
-      race: "b",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_26.png",
-    },
-    {
-      id: 27,
-      name: "Forest Spirit",
-      race: "l",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_27.png",
-    },
-    {
-      id: 28,
-      name: "Observer",
-      race: "b",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_28.png",
-    },
-    {
-      id: 29,
-      name: "Guardian",
-      race: "l",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_29.png",
-    },
-    {
-      id: 30,
-      name: "Watcher",
-      race: "b",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_30.png",
-    },
-    {
-      id: 31,
-      name: "Overseer",
-      race: "l",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_31.png",
-    },
-    {
-      id: 32,
-      name: "Rogue",
-      race: "b",
-      rarity: "n",
-      price: 502,
-      url: "/images/card/card_32.png",
-    },
-  ];
-
-  const sortList = [];
-
+import { cardData } from "../../data/Card";
+function Home() {
   const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(12);
   const [page, setPage] = useState(1);
   const [Selected, setSelected] = useState("");
   const [checkedItems, setCheckedItems] = useState([]);
   const offset = (page - 1) * limit;
+  const [count, setCount] = useState(1);
+
+  // useEffect(() => {
+  //   // setCount(count + 1);
+  //   console.log(`체크 값 : ${checkedItems} || 순서 : ${count}`);
+  //   // setPostHandler(checkedItems);
+  //   // setPosts(posts);
+  // });
 
   useEffect(() => {
-    setPostHandler(checkedItems);
-    setPosts(posts);
-  }, [posts]);
+    if (checkedItems.length !== 0) {
+      // console.log(checkedItems);
+      setPostHandler(checkedItems);
+    }
+  }, [checkedItems]);
+
+  useEffect(() => {}, [posts]);
 
   const checkedItemHandler = (value, isChecked) => {
     if (isChecked) {
-      // checkedItems.add(value);
-      setCheckedItems([checkedItems, ...value]);
-      setPostHandler(checkedItems);
+      setCheckedItems([...checkedItems, value]);
     } else if (
       !isChecked &&
       checkedItems.find((sortType) => sortType === value)
@@ -290,63 +39,52 @@ export default function Home() {
       // checkedItems.delete(value);
       const filter = checkedItems.filter((sortType) => sortType !== value);
       setCheckedItems([...filter]);
-      setPostHandler(checkedItems);
     }
   };
 
   const checkHandler = ({ target }) => {
-    console.log(`값 : ${target.value} || 체크 여부 : ${target.checked}`);
     checkedItemHandler(target.value, target.checked);
   };
 
   const setPostHandler = (checkedItems) => {
-    checkedItems.forEach((sortType) => {
+    console.log(checkedItems);
+    checkedItems.map((sortType) => {
+      console.log(sortType);
       if (sortType === "b" || sortType === "a" || sortType === "l") {
-        console.log(`종족 필터 값 : ${sortType}`);
-        const result = cards.filter((card) => card.race === sortType);
-        setPosts(result);
+        const result = cardData.filter((cards) => cards.race === sortType);
+        result.map((value) => {
+          if (posts.length === 0) {
+            setPosts([...posts, value]);
+          } else if (posts.id !== result.id) {
+            console.log(posts);
+            // setPosts([...posts, value]);
+          }
+        });
       } else {
-        const result = cards.filter((card) => card.rarity === sortType);
-        console.log(`레벨 필터 값 : ${sortType}`);
-        setPosts(result);
+        const result = cardData.filter((cards) => cards.rarity === sortType);
+        result.map((value, id) => {
+          if (posts.length === 0) {
+            setPosts([...posts, value]);
+          } else if (posts.id !== result.id) {
+            setPosts([...posts, value]);
+          }
+        });
       }
+
+      // } else {
+      //   const result = cardData.filter((cards) => cards.rarity === sortType);
+      //   setPosts(result);
+      // }
     });
-    console.log(`결과값 : ${JSON.stringify(posts)}`);
   };
   // checkedItems.forEach { value =>
   //   console.log(value);
   // }
 
   const handleSelect = (e) => {
-    console.log(`결과 값 : ${JSON.stringify(e.target.value)}`);
     setSelected(e.target.value);
   };
 
-  var content = cards.map((card) => (
-    <div className="nft_card">
-      <div
-        className="nft_card_info"
-        style={{ backgroundImage: `url("${card.url}")` }}
-      >
-        <div className="nft_card_gradient">
-          {card.rarity === "e" && <div className="nft_level_e"></div>}
-          {card.rarity === "sr" && <div className="nft_level_sr"></div>}
-          {card.rarity === "r" && <div className="nft_level_r"></div>}
-          {card.rarity === "n" && <div className="nft_level_n"></div>}
-          <div className="nft_character_name">{card.name}</div>
-          <div className="nft_price_section">
-            <div className="nft_current_price">
-              <img className="nft_price_icon" src="/images/card/ic_coin.png" />
-              <span className="nft_price_text">{card.price} BUSD</span>
-            </div>
-            <div className="nft_max_price">
-              <span className="nft_max_price_text">~${card.price}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  ));
   return (
     <div className="main">
       <Header cursor="marketplace" />
@@ -366,13 +104,13 @@ export default function Home() {
               <picture>
                 <source
                   media="(min-width:1180px )"
-                  srcset="/images/main/left_box.png"
+                  srcSet="/images/main/left_box.png"
                 />
                 <source
                   media="(max-width:1179px )"
-                  srcset="/images/main/left_box.png"
+                  srcSet="/images/main/left_box.png"
                 />
-                <img src="/images/main/left_box.png" alt="left_box" />
+                <img srcSet="/images/main/left_box.png" alt="left_box" />
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Floor Price</span>
@@ -383,13 +121,13 @@ export default function Home() {
               <picture>
                 <source
                   media="(min-width:1180px )"
-                  srcset="/images/main/left_box.png"
+                  srcSet="/images/main/left_box.png"
                 />
                 <source
                   media="(max-width:1179px )"
-                  srcset="/images/main/left_box.png"
+                  srcSet="/images/main/left_box.png"
                 />
-                <img src="/images/main/left_box.png" alt="left_box" />
+                <img srcSet="/images/main/left_box.png" alt="left_box" />
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Total Volume</span>
@@ -400,13 +138,13 @@ export default function Home() {
               <picture>
                 <source
                   media="(min-width:1180px )"
-                  srcset="/images/main/left_box.png"
+                  srcSet="/images/main/left_box.png"
                 />
                 <source
                   media="(max-width:1179px )"
-                  srcset="/images/main/left_box.png"
+                  srcSet="/images/main/left_box.png"
                 />
-                <img src="/images/main/left_box.png" alt="left_box" />
+                <img srcSet="/images/main/left_box.png" alt="left_box" />
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Highest Sell Price</span>
@@ -417,13 +155,13 @@ export default function Home() {
               <picture>
                 <source
                   media="(min-width:1180px )"
-                  srcset="/images/main/left_box.png"
+                  srcSet="/images/main/left_box.png"
                 />
                 <source
                   media="(max-width:1179px )"
-                  srcset="/images/main/left_box.png"
+                  srcSet="/images/main/left_box.png"
                 />
-                <img src="/images/main/left_box.png" alt="left_box" />
+                <img srcSet="/images/main/left_box.png" alt="left_box" />
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Total Listed Count</span>
@@ -443,10 +181,12 @@ export default function Home() {
                       id="ch_beny"
                       className="beny_checkbox"
                       type="checkbox"
-                      value="b"
-                      onChange={(e) => checkHandler(e)}
+                      value={"b"}
+                      onChange={(e) => {
+                        checkHandler(e);
+                      }}
                     />
-                    <label for="ch_beny">
+                    <label htmlFor="ch_beny">
                       <div className="beny_badge">
                         <div className="beny_icon" />
                       </div>
@@ -457,9 +197,11 @@ export default function Home() {
                       className="arche_chekbox"
                       type="checkbox"
                       value="a"
-                      onChange={(e) => checkHandler(e)}
+                      onChange={(e) => {
+                        checkHandler(e);
+                      }}
                     />
-                    <label for="ch_arche">
+                    <label htmlFor="ch_arche">
                       <div className="arche_badge">
                         <div className="arche_icon" />
                       </div>
@@ -470,9 +212,11 @@ export default function Home() {
                       className="luchia_chekbox"
                       type="checkbox"
                       value="l"
-                      onChange={(e) => checkHandler(e)}
+                      onChange={(e) => {
+                        checkHandler(e);
+                      }}
                     />
-                    <label for="ch_luchia">
+                    <label htmlFor="ch_luchia">
                       <div className="luchia_badge">
                         <div className="luchia_icon"></div>
                       </div>
@@ -488,9 +232,11 @@ export default function Home() {
                       className="epic_checkbox"
                       type="checkbox"
                       value="e"
-                      onChange={(e) => checkHandler(e)}
+                      onChange={(e) => {
+                        checkHandler(e);
+                      }}
                     />
-                    <label for="ch_epic">
+                    <label htmlFor="ch_epic">
                       <div className="epic_badge">
                         <div className="epic_icon"></div>
                       </div>
@@ -501,9 +247,11 @@ export default function Home() {
                       className="sr_checkbox"
                       type="checkbox"
                       value="sr"
-                      onChange={(e) => checkHandler(e)}
+                      onChange={(e) => {
+                        checkHandler(e);
+                      }}
                     />
-                    <label for="ch_sr">
+                    <label htmlFor="ch_sr">
                       <div className="sr_badge">
                         <div className="sr_icon"></div>
                       </div>
@@ -514,9 +262,11 @@ export default function Home() {
                       className="r_checkbox"
                       type="checkbox"
                       value="r"
-                      onChange={(e) => checkHandler(e)}
+                      onChange={(e) => {
+                        checkHandler(e);
+                      }}
                     />
-                    <label for="ch_r">
+                    <label htmlFor="ch_r">
                       <div className="r_badge">
                         <div className="r_icon"></div>
                       </div>
@@ -527,9 +277,11 @@ export default function Home() {
                       className="n_checkbox"
                       type="checkbox"
                       value="n"
-                      onChange={(e) => checkHandler(e)}
+                      onChange={(e) => {
+                        checkHandler(e);
+                      }}
                     />
-                    <label for="ch_n">
+                    <label htmlFor="ch_n">
                       <div className="n_badge">
                         <div className="n_icon"></div>
                       </div>
@@ -587,7 +339,7 @@ export default function Home() {
                               <div className="nft_current_price">
                                 <img
                                   className="nft_price_icon"
-                                  src="/images/card/ic_coin.png"
+                                  srcSet="/images/card/ic_coin.png"
                                 />
                                 <span className="nft_price_text">
                                   {price} BUSD
@@ -607,7 +359,7 @@ export default function Home() {
               </div>
               <div className="pagination_section">
                 <Pagination
-                  total={posts.length}
+                  total={posts.length === 0 ? 1 : posts.length}
                   limit={limit}
                   page={page}
                   setPage={setPage}
@@ -621,3 +373,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

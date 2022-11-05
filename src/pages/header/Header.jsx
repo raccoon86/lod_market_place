@@ -18,24 +18,21 @@ function Header(props) {
   const navigator = useNavigate();
 
   const goToHome = () => {
-    console.log("goToGame");
     navigator("/");
   };
 
-  const goToGame = (event) => {
-    console.log("goToGame");
+  const goToGame = () => {
     navigator("/game");
   };
 
-  const goToInventory = (event) => {
-    console.log("goToInventory");
+  const goToInventory = () => {
     navigator("/inventory");
   };
   // console.log(`현재 위치 ${props.cursor}`);
   return (
     <div className="menu">
       <a className="logo"></a>
-      {props.cursor === "marketplace " ? (
+      {props.cursor === "marketplace" ? (
         <div className="cursor_section menu_list">
           {" "}
           <div className="c_marketplace menu_list" onClick={goToHome}>
@@ -92,7 +89,7 @@ function Header(props) {
       <div className="mobMenu">
         <div className="mobMenu_wrap">
           {props.cursor === "marketplace" ? (
-            <div className="cursor_section mobMenu_list">
+            <div className="cursor_section mobMenu_list active">
               {" "}
               <div className="c_marketplace" onClick={goToHome}>
                 MARKETPLACE
@@ -111,7 +108,7 @@ function Header(props) {
             COMMING <br className="mob_br" /> SOON
           </a>
           {props.cursor === "game" ? (
-            <div className="cursor_section mobMenu_list">
+            <div className="cursor_section mobMenu_list active">
               <div className="c_game" onClick={goToGame}>
                 GAME
               </div>{" "}
@@ -123,7 +120,7 @@ function Header(props) {
             </div>
           )}
           {props.cursor === "document" ? (
-            <div className="cursor_section mobMenu_list">
+            <div className="cursor_section mobMenu_list active">
               <div className="c_document">DOCUMENT</div>{" "}
               <p className="cursor" />{" "}
             </div>
@@ -131,7 +128,7 @@ function Header(props) {
             <div className="document mobMenu_list">DOCUMENT</div>
           )}
           {props.cursor === "inventory" ? (
-            <div className="cursor_section mobMenu_list">
+            <div className="cursor_section mobMenu_list active">
               <div className="c_inventory" onClick={goToInventory}>
                 INVENTORY
               </div>{" "}

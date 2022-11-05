@@ -270,11 +270,15 @@ export default function Inventory() {
     },
   ];
   // const initTab = (location.state === null && location.state.tab === null) ? location.state.tab : "my_nft";
-  const initTab = (location.state === null ? "my_nft" : (location.state.tab !== null && location.state.tab))
+  const initTab =
+    location.state === null
+      ? "my_nft"
+      : location.state.tab !== null && location.state.tab;
   console.log(`탭 : ${JSON.stringify(initTab)}`);
   const [tab, setTab] = useState(initTab);
   const [posts, setPosts] = useState([cards]);
 
+  console.log(tab);
 
   // useEffect(() => {
   //     // setPostHandler(checkedItems);
@@ -324,7 +328,7 @@ export default function Inventory() {
                   type="radio"
                   value="my_nft"
                   onChange={(e) => checkHandler(e)}
-                  defaultChecked={(tab === "mynft" ? true : false)}
+                  defaultChecked={tab === "my_nft" ? true : false}
                 />
                 <label for="ch_my_nft">
                   <div className="my_nft_title">NFTs</div>
@@ -337,7 +341,7 @@ export default function Inventory() {
                   type="radio"
                   value="my_nft_list"
                   onChange={(e) => checkHandler(e)}
-                  defaultChecked={(tab === "my_nft_list" ? true : false)}
+                  defaultChecked={tab === "my_nft_list" ? true : false}
                 />
                 <label for="ch_my_nft_list">
                   <div className="my_nft_list_title">Listed NFTs</div>
@@ -350,7 +354,7 @@ export default function Inventory() {
                   type="radio"
                   value="activity"
                   onChange={(e) => checkHandler(e)}
-                  defaultChecked={(tab === "activity" ? true : false)}
+                  defaultChecked={tab === "activity" ? true : false}
                 />
                 <label for="ch_activity">
                   <div className="activity_title">Activity NFTs</div>
