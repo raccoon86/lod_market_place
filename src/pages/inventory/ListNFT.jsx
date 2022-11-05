@@ -1,12 +1,14 @@
 import "./MyNFT.css";
 import React, { useEffect, useState } from "react";
 import Pagination from "../pagination/Pagination";
+import { useNavigate } from "react-router-dom";
 
 function ListNFT() {
   const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
+  const navigator = useNavigate();
 
   useEffect(() => {
     if (posts.length === 0) {
@@ -274,7 +276,9 @@ function ListNFT() {
       url: "/images/card/card_32.png",
     },
   ];
-
+  const goToMyNftListDetail = (id) => {
+    navigator(`/inventory/my_nft_list/detail/${id}`);
+  };
   return (
     <div className="main_card_section">
       <div className="card_section">
@@ -282,12 +286,13 @@ function ListNFT() {
         {posts.length !== 0 &&
           posts
             .slice(offset, offset + limit)
-            .map(({ id, name, race, rarity, price, url }) => (
-              <article key={id}>
+            .map(({ id, name, race, rarity, price, url }, idx) => (
+              <article key={idx}>
                 <div className="nft_card">
                   <div
                     className="nft_card_info"
                     style={{ backgroundImage: `url("${url}")` }}
+                    onClick={() => goToMyNftListDetail(id)}
                   >
                     <div className="nft_card_gradient">
                       {rarity === "e" && <div className="nft_level_e"></div>}
