@@ -10,6 +10,7 @@ function Home() {
   const [page, setPage] = useState(1);
   const [Selected, setSelected] = useState("");
   const [checkedItems, setCheckedItems] = useState([]);
+  const [subCkedItems, setSubCheckedItems] = useState([]);
   const offset = (page - 1) * limit;
   const [count, setCount] = useState(1);
 
@@ -21,65 +22,92 @@ function Home() {
   // });
 
   useEffect(() => {
-    if (checkedItems.length !== 0) {
-      // console.log(checkedItems);
-      setPostHandler(checkedItems);
-    }
+    // console.log(checkedItems);
+    setPostHandler(checkedItems);
   }, [checkedItems]);
 
-  useEffect(() => {}, [posts]);
+  useEffect(() => {
+    console.log(posts);
+  }, [posts]);
 
-  const checkedItemHandler = (value, isChecked) => {
+  const checkedItemHandler = (sortType, value, isChecked) => {
     if (isChecked) {
-      setCheckedItems([...checkedItems, value]);
-    } else if (
-      !isChecked &&
-      checkedItems.find((sortType) => sortType === value)
-    ) {
+      setCheckedItems([...checkedItems, { sortType, value }]);
+    } else if (!isChecked && checkedItems.find((res) => res.value === value)) {
       // checkedItems.delete(value);
-      const filter = checkedItems.filter((sortType) => sortType !== value);
+      const filter = checkedItems.filter((res) => res.value !== value);
       setCheckedItems([...filter]);
     }
   };
 
-  const checkHandler = ({ target }) => {
-    checkedItemHandler(target.value, target.checked);
+  const checkHandler = ({ target }, sortType) => {
+    checkedItemHandler(sortType, target.value, target.checked);
   };
 
   const setPostHandler = (checkedItems) => {
-    console.log(checkedItems);
-    checkedItems.map((sortType) => {
-      console.log(sortType);
-      if (sortType === "b" || sortType === "a" || sortType === "l") {
-        const result = cardData.filter((cards) => cards.race === sortType);
-        result.map((value) => {
-          if (posts.length === 0) {
-            setPosts([...posts, value]);
-          } else if (posts.id !== result.id) {
-            console.log(posts);
-            // setPosts([...posts, value]);
-          }
+    var raceList = [];
+    var resultList = [];
+    if (checkedItems.length === 0) {
+      setPosts([]);
+    } else {
+      console.log(checkedItems);
+      if (
+        checkedItems.find((res) => res.sortType === "race") &&
+        checkedItems.find((res) => res.sortType === "rarity")
+      ) {
+        // 전부 선택
+        checkedItems.map(({ sortType, value }) => {
+          const result = cardData.filter((res) => res.race == value);
+          result.map((res) => {
+            raceList.push(res);
+          });
         });
-      } else {
-        const result = cardData.filter((cards) => cards.rarity === sortType);
-        result.map((value, id) => {
-          if (posts.length === 0) {
-            setPosts([...posts, value]);
-          } else if (posts.id !== result.id) {
-            setPosts([...posts, value]);
-          }
+
+        checkedItems.map(({ sortType, value }) => {
+          const result = raceList.filter((res) => res.rarity == value);
+          result.map((res) => {
+            resultList.push(res);
+          });
+        });
+      } else if (checkedItems.find((res) => res.sortType !== "rarity")) {
+        checkedItems.map(({ sortType, value }) => {
+          const result = cardData.filter((res) => res.race == value);
+          result.map((res) => {
+            resultList.push(res);
+          });
+        });
+      } else if (checkedItems.find((res) => res.sortType !== "race")) {
+        checkedItems.map(({ sortType, value }) => {
+          const result = cardData.filter((res) => res.rarity == value);
+          result.map((res) => {
+            resultList.push(res);
+          });
         });
       }
+    }
+    // checkedItems.map((sortType) => {
+    //   if (sortType === "b" || sortType === "a" || sortType === "l") {
+    //     const result = cardData.filter((cards) => cards.race === sortType);
+    //     result.map((res) => {
+    //       resultList.push(res);
+    //     });
+    //   }
 
-      // } else {
-      //   const result = cardData.filter((cards) => cards.rarity === sortType);
-      //   setPosts(result);
-      // }
-    });
+    // if (
+    //   sortType === "e" ||
+    //   sortType === "sr" ||
+    //   sortType === "r" ||
+    //   sortType === "n"
+    // ) {
+    //   console.log(`정렬 타입 ${sortType}`);
+    //   const result = resultList.filter((cards) => cards.rarity === sortType);
+    //   result.map((res) => {
+    //     resultList.push(res);
+    //   });
+    // }
+    // });
+    setPosts([...new Set(resultList)]);
   };
-  // checkedItems.forEach { value =>
-  //   console.log(value);
-  // }
 
   const handleSelect = (e) => {
     setSelected(e.target.value);
@@ -181,9 +209,9 @@ function Home() {
                       id="ch_beny"
                       className="beny_checkbox"
                       type="checkbox"
-                      value={"b"}
+                      value="b"
                       onChange={(e) => {
-                        checkHandler(e);
+                        checkHandler(e, "race");
                       }}
                     />
                     <label htmlFor="ch_beny">
@@ -198,7 +226,7 @@ function Home() {
                       type="checkbox"
                       value="a"
                       onChange={(e) => {
-                        checkHandler(e);
+                        checkHandler(e, "race");
                       }}
                     />
                     <label htmlFor="ch_arche">
@@ -213,7 +241,7 @@ function Home() {
                       type="checkbox"
                       value="l"
                       onChange={(e) => {
-                        checkHandler(e);
+                        checkHandler(e, "race");
                       }}
                     />
                     <label htmlFor="ch_luchia">
@@ -233,7 +261,7 @@ function Home() {
                       type="checkbox"
                       value="e"
                       onChange={(e) => {
-                        checkHandler(e);
+                        checkHandler(e, "rarity");
                       }}
                     />
                     <label htmlFor="ch_epic">
@@ -248,7 +276,7 @@ function Home() {
                       type="checkbox"
                       value="sr"
                       onChange={(e) => {
-                        checkHandler(e);
+                        checkHandler(e, "rarity");
                       }}
                     />
                     <label htmlFor="ch_sr">
@@ -263,7 +291,7 @@ function Home() {
                       type="checkbox"
                       value="r"
                       onChange={(e) => {
-                        checkHandler(e);
+                        checkHandler(e, "rarity");
                       }}
                     />
                     <label htmlFor="ch_r">
@@ -278,7 +306,7 @@ function Home() {
                       type="checkbox"
                       value="n"
                       onChange={(e) => {
-                        checkHandler(e);
+                        checkHandler(e, "rarity");
                       }}
                     />
                     <label htmlFor="ch_n">
@@ -312,50 +340,51 @@ function Home() {
               <div className="card_section">
                 {/* {content} */}
 
-                {posts
-                  .slice(offset, offset + limit)
-                  .map(({ id, name, race, rarity, price, url }) => (
-                    <article key={id}>
-                      <div className="nft_card">
-                        <div
-                          className="nft_card_info"
-                          style={{ backgroundImage: `url("${url}")` }}
-                        >
-                          <div className="nft_card_gradient">
-                            {rarity === "e" && (
-                              <div className="nft_level_e"></div>
-                            )}
-                            {rarity === "sr" && (
-                              <div className="nft_level_sr"></div>
-                            )}
-                            {rarity === "r" && (
-                              <div className="nft_level_r"></div>
-                            )}
-                            {rarity === "n" && (
-                              <div className="nft_level_n"></div>
-                            )}
-                            <div className="nft_character_name">{name}</div>
-                            <div className="nft_price_section">
-                              <div className="nft_current_price">
-                                <img
-                                  className="nft_price_icon"
-                                  srcSet="/images/card/ic_coin.png"
-                                />
-                                <span className="nft_price_text">
-                                  {price} BUSD
-                                </span>
-                              </div>
-                              <div className="nft_max_price">
-                                <span className="nft_max_price_text">
-                                  ~${price}
-                                </span>
+                {posts.length !== 0 &&
+                  posts
+                    .slice(offset, offset + limit)
+                    .map(({ id, name, race, rarity, price, url }, idx) => (
+                      <article key={idx}>
+                        <div className="nft_card">
+                          <div
+                            className="nft_card_info"
+                            style={{ backgroundImage: `url("${url}")` }}
+                          >
+                            <div className="nft_card_gradient">
+                              {rarity === "e" && (
+                                <div className="nft_level_e"></div>
+                              )}
+                              {rarity === "sr" && (
+                                <div className="nft_level_sr"></div>
+                              )}
+                              {rarity === "r" && (
+                                <div className="nft_level_r"></div>
+                              )}
+                              {rarity === "n" && (
+                                <div className="nft_level_n"></div>
+                              )}
+                              <div className="nft_character_name">{name}</div>
+                              <div className="nft_price_section">
+                                <div className="nft_current_price">
+                                  <img
+                                    className="nft_price_icon"
+                                    srcSet="/images/card/ic_coin.png"
+                                  />
+                                  <span className="nft_price_text">
+                                    {price} BUSD
+                                  </span>
+                                </div>
+                                <div className="nft_max_price">
+                                  <span className="nft_max_price_text">
+                                    ~${price}
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </article>
-                  ))}
+                      </article>
+                    ))}
               </div>
               <div className="pagination_section">
                 <Pagination
