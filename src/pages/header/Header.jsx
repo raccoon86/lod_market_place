@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
-function Header(props) {
+function Header({ cursor, getIsConnect }) {
   const [menu, setMenu] = useState("");
   const [mobMenu, setMobMenu] = useState(true);
   const [isActive, setIsActive] = useState(false);
+  const [isConnect, setIsConnect] = useState(false);
   const navigator = useNavigate();
 
   useEffect(() => {
     console.log(isActive);
   }, [isActive]);
+
   const goToHome = () => {
     navigator("/");
   };
@@ -26,11 +28,17 @@ function Header(props) {
   const setActive = () => {
     setIsActive(!isActive);
   };
+
+  const connectActive = () => {
+    setIsConnect(!isConnect);
+    getIsConnect(!isConnect);
+  };
+  const text = "0xc885f123123122312221e40ffe5";
   // console.log(`현재 위치 ${props.cursor}`);
   return (
     <div className="menu">
-      <a className="logo"></a>
-      {props.cursor === "marketplace" ? (
+      <a className="logo" onClick={goToHome}></a>
+      {cursor === "marketplace" ? (
         <div className="cursor_section menu_list">
           {" "}
           <div className="c_marketplace menu_list" onClick={goToHome}>
@@ -45,7 +53,7 @@ function Header(props) {
       )}
       <a className="comming menu_list">COMMING SOON</a>
       <a className="comming menu_list">COMMING SOON</a>
-      {props.cursor === "game" ? (
+      {cursor === "game" ? (
         <div className="cursor_section menu_list">
           <div className="c_game" onClick={goToGame}>
             GAME
@@ -57,14 +65,14 @@ function Header(props) {
           GAME
         </div>
       )}
-      {props.cursor === "document" ? (
+      {cursor === "document" ? (
         <div className="cursor_section menu_list">
           <div className="c_document">DOCUMENT</div> <p className="cursor" />{" "}
         </div>
       ) : (
         <div className="document menu_list">DOCUMENT</div>
       )}
-      {props.cursor === "inventory" ? (
+      {cursor === "inventory" ? (
         <div className="cursor_section menu_list">
           <div className="c_inventory" onClick={goToInventory}>
             INVENTORY
@@ -76,7 +84,21 @@ function Header(props) {
           INVENTORY
         </div>
       )}
-      <a className="wallet menu_list"></a>
+      <div
+        className="wallet menu_list"
+        onClick={() => {
+          connectActive();
+        }}
+      >
+        <img className="ic_wallet" srcSet="/images/main/ic_wallet.png" />
+        <span className="wallet_text">
+          {isConnect === true
+            ? text.length > 15
+              ? text.substr(0, 8) + "..." + text.substr(20)
+              : text
+            : "Connect Wallet"}
+        </span>
+      </div>
       <div
         className="mobMenu_btn"
         onClick={() => {
@@ -103,7 +125,7 @@ function Header(props) {
       {/* 모바일메뉴 */}
       <div className={isActive === true ? "mobMenu active" : "mobMenu"}>
         <div className="mobMenu_wrap">
-          {props.cursor === "marketplace" ? (
+          {cursor === "marketplace" ? (
             <div className="cursor_section mobMenu_list">
               {" "}
               <div className="c_marketplace" onClick={goToHome}>
@@ -122,7 +144,7 @@ function Header(props) {
           <a className="comming mobMenu_list">
             COMMING <br className="mob_br" /> SOON
           </a>
-          {props.cursor === "game" ? (
+          {cursor === "game" ? (
             <div className="cursor_section mobMenu_list">
               <div className="c_game" onClick={goToGame}>
                 GAME
@@ -134,7 +156,7 @@ function Header(props) {
               GAME
             </div>
           )}
-          {props.cursor === "document" ? (
+          {cursor === "document" ? (
             <div className="cursor_section mobMenu_list">
               <div className="c_document">DOCUMENT</div>{" "}
               <p className="cursor" />{" "}
@@ -142,7 +164,7 @@ function Header(props) {
           ) : (
             <div className="document mobMenu_list">DOCUMENT</div>
           )}
-          {props.cursor === "inventory" ? (
+          {cursor === "inventory" ? (
             <div className="cursor_section mobMenu_list">
               <div className="c_inventory" onClick={goToInventory}>
                 INVENTORY
@@ -154,7 +176,21 @@ function Header(props) {
               INVENTORY
             </div>
           )}
-          <a className="wallet mobMenu_list"></a>
+          <div
+            className="m_wallet mobMenu_list"
+            onClick={() => {
+              connectActive();
+            }}
+          >
+            <img className="ic_wallet" srcSet="/images/main/ic_wallet.png" />
+            <span className="wallet_text">
+              {isConnect === true
+                ? text.length > 15
+                  ? text.substr(0, 8) + "..." + text.substr(20)
+                  : text
+                : "Connect Wallet"}
+            </span>
+          </div>
         </div>
       </div>
     </div>

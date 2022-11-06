@@ -1,4 +1,4 @@
-import "../detail/Detail.css";
+import "./Detail.css";
 import React, { useState } from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
@@ -23,6 +23,8 @@ function Detail() {
   };
 
   const data = cardData.filter((res) => res.id === location.state.id);
+
+  const text = "0xc885f123123122312221e40ffe5";
   return (
     <div className="main">
       <Header />
@@ -51,7 +53,9 @@ function Detail() {
                   <div className="wallet_address_section">
                     <span className="address_name">Owner</span>
                     <span className="address">
-                      0xc885f123123122312221e40ffe5
+                      {text.length > 15
+                        ? text.substr(0, 8) + "..." + text.substr(20)
+                        : text}
                     </span>
                   </div>
                 </div>
@@ -59,7 +63,7 @@ function Detail() {
                   <span className="attribute_title">Attributes</span>
                   <div className="attribute_level" />
                 </div>
-                <div className="listing_price_section">
+                <div className="detail_listing_price_section">
                   <span className="price_title">Listing Price</span>
                   <div className="price_section">
                     <div className="coin"></div>

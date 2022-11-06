@@ -334,6 +334,15 @@ input[id="ch_wallet"]:checked + label .wallet_title {
   color: #d3cbaf;
 }
 
+.wallet_connect_section {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: auto;
+  height: 334px;
+}
+
 .wallet_connect_section .button_connect_wallet {
   width: 307px;
   height: 60px;
