@@ -16,6 +16,7 @@
   width: 400px;
   height: 74px;
   display: flex;
+  cursor: pointer;
   margin-top: 30px;
 }
 
@@ -44,7 +45,7 @@
 .button_400 .button_400_body .button_280_text {
   font-family: "Noto Sans CJK KR";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 22px;
   line-height: 33px;
   color: #472716;

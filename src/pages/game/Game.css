@@ -35,7 +35,7 @@
 
 .game_info_container .menu_section {
   height: auto;
-  width: 270px;
+  width: 330px;
   background: #161929;
   border-radius: 20px;
   padding: 30px;
@@ -51,7 +51,6 @@ input[id="ch_game"] + label {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 100%;
   background: linear-gradient(90deg, #272c3e 0%, #1f2333 100%);
   border-radius: 10px;
@@ -89,10 +88,11 @@ input[id="ch_wallet"]:checked + label {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
+  flex: 1;
   background: url("/public/images/inventory/bg_active.png") no-repeat
-    center/contain;
+    center/cover;
   border-radius: 10px;
+  aspect-ratio: 9/2;
 }
 
 input[id="ch_account"] + label {
@@ -100,7 +100,7 @@ input[id="ch_account"] + label {
   margin-top: 10px;
   justify-content: center;
   align-items: center;
-  height: 60px;
+
   width: 100%;
   background: linear-gradient(90deg, #272c3e 0%, #1f2333 100%);
   border-radius: 10px;
@@ -133,7 +133,7 @@ input[id="ch_wallet"] + label {
   margin-top: 10px;
   justify-content: center;
   align-items: center;
-  height: 60px;
+
   width: 100%;
   background: linear-gradient(90deg, #272c3e 0%, #1f2333 100%);
   border-radius: 10px;
@@ -715,7 +715,18 @@ input[id="ch_wallet"]:checked + label .wallet_title {
   justify-content: center;
   justify-items: center;
 }
-
+input[id="ch_game"] + label,
+input[id="ch_wallet"] + label,
+input[id="ch_account"] + label {
+  aspect-ratio: 9/2;
+  height: 60px;
+}
+input[id="ch_game"]:checked + label,
+input[id="ch_wallet"]:checked + label,
+input[id="ch_account"]:checked + label {
+  aspect-ratio: 9/2;
+  height: auto;
+}
 @media all and (max-width: 1179px) {
   .main.gamebg {
     background: url("/public/images/game/bg_game.png") no-repeat top/contain;
@@ -724,6 +735,21 @@ input[id="ch_wallet"]:checked + label .wallet_title {
   .game_info_container {
     width: 100%;
     flex-direction: column;
+  }
+  input[id="ch_game"]:checked + label,
+  input[id="ch_account"]:checked + label,
+  input[id="ch_wallet"]:checked + label {
+    background: url("/public/images/inventory/bg_active-tab.png") no-repeat
+      center/contain;
+  }
+  input[id="ch_game"] + label,
+  input[id="ch_wallet"] + label,
+  input[id="ch_account"] + label,
+  input[id="ch_game"]:checked + label,
+  input[id="ch_wallet"]:checked + label,
+  input[id="ch_account"]:checked + label {
+    height: 54px;
+    aspect-ratio: 115/27;
   }
 
   .game_info_container .menu_section {
@@ -739,18 +765,13 @@ input[id="ch_wallet"]:checked + label .wallet_title {
     min-height: 0;
     margin-bottom: 30px;
   }
-  input[id="ch_game"]:checked + label,
+
   input[id="ch_game"] + label,
   input[id="ch_wallet"] + label,
-  input[id="ch_wallet"]:checked + label,
-  input[id="ch_account"]:checked + label,
   input[id="ch_account"] + label {
-    width: auto;
-    height: 54px;
+    width: 100%;
     flex: 1;
     margin-top: 0;
-    background-size: cover;
-    background-position: center;
   }
   .game_info_container .game_info_section {
     width: 100%;
@@ -786,6 +807,21 @@ input[id="ch_wallet"]:checked + label .wallet_title {
 }
 
 @media all and (max-width: 767px) {
+  input[id="ch_game"]:checked + label,
+  input[id="ch_account"]:checked + label,
+  input[id="ch_wallet"]:checked + label {
+    background: url("/public/images/inventory/bg_active-mob.png") no-repeat
+      center/contain;
+  }
+  input[id="ch_game"] + label,
+  input[id="ch_wallet"] + label,
+  input[id="ch_account"] + label,
+  input[id="ch_game"]:checked + label,
+  input[id="ch_wallet"]:checked + label,
+  input[id="ch_account"]:checked + label {
+    height: auto;
+    aspect-ratio: 160/27;
+  }
   .game_info_container .menu_section {
     flex-direction: column;
   }
@@ -815,7 +851,7 @@ input[id="ch_wallet"]:checked + label .wallet_title {
     grid-template-columns: repeat(2, 1fr);
   }
   .game_info_container .info_section .nft_section {
-    padding: 12px 17px;
+    padding: 12px 18px;
   }
   .wallet_address_wrap {
     width: 100%;
@@ -842,7 +878,7 @@ input[id="ch_wallet"]:checked + label .wallet_title {
     margin-right: 0;
   }
   .info_section .account_info_section {
-    padding: 30px 10px;
+    padding: 30px 18px;
   }
   .account_info_section .wallet_info_section .account_lort_section .lort_title,
   .account_info_section .wallet_info_section .account_logt_section .logt_title {

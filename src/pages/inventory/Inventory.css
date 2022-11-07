@@ -20,6 +20,7 @@ section {
 }
 .main_card_section .card_section .nft_card {
   width: 100%;
+  cursor: pointer;
 }
 .main_card_section .card_section .nft_card_info {
   background-position: center;
@@ -59,7 +60,7 @@ section {
 
 .inventory_container .my_nft_container .my_nft_list_section {
   height: auto;
-  width: 270px;
+  width: 330px;
   background: #161929;
   border-radius: 20px;
   padding: 30px;
@@ -70,7 +71,6 @@ input[id="ch_my_nft"] + label {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
   width: 100%;
   background: linear-gradient(90deg, #272c3e 0%, #1f2333 100%);
   border-radius: 10px;
@@ -92,7 +92,7 @@ input[id="ch_activity"]:checked + label {
   align-items: center;
   width: auto;
   background: url("/public/images/inventory/bg_active.png") no-repeat
-    center/cover;
+    center/contain;
 
   border-radius: 10px;
 }
@@ -115,7 +115,7 @@ input[id="ch_my_nft_list"] + label {
   margin-top: 10px;
   justify-content: center;
   align-items: center;
-  height: 60px;
+
   width: 100%;
   background: linear-gradient(90deg, #272c3e 0%, #1f2333 100%);
   border-radius: 10px;
@@ -148,7 +148,7 @@ input[id="ch_activity"] + label {
   margin-top: 10px;
   justify-content: center;
   align-items: center;
-  height: 60px;
+
   width: 100%;
   background: linear-gradient(90deg, #272c3e 0%, #1f2333 100%);
   border-radius: 10px;
@@ -175,6 +175,11 @@ input[id="ch_activity"]:checked + label .activity_title {
   color: #e8e6df;
   text-shadow: 0px 0px 40px rgba(255, 196, 82, 0.25), 0px 0px 20px #ffc452;
 }
+input[id="ch_my_nft"] + label,
+input[id="ch_my_nft_list"] + label,
+input[id="ch_activity"] + label {
+  aspect-ratio: 9/2;
+}
 
 @media all and (max-width: 1179px) {
   .main.invenbg {
@@ -196,13 +201,21 @@ input[id="ch_activity"]:checked + label .activity_title {
     gap: 20px;
     margin-right: 0;
   }
+  input[id="ch_my_nft"]:checked + label,
+  input[id="ch_my_nft_list"]:checked + label,
+  input[id="ch_activity"]:checked + label {
+    background: url("/public/images/inventory/bg_active-tab.png") no-repeat
+      center/contain;
+  }
   input[id="ch_my_nft"] + label,
   input[id="ch_my_nft"]:checked + label,
   input[id="ch_my_nft_list"] + label,
   input[id="ch_my_nft_list"]:checked + label,
   input[id="ch_activity"] + label,
   input[id="ch_activity"]:checked + label {
-    flex: 1;
+    aspect-ratio: 115/27;
+
+    height: 54px;
     margin: 0;
   }
   input[id="ch_my_nft"]:checked + label .my_nft_title,
@@ -225,7 +238,22 @@ input[id="ch_activity"]:checked + label .activity_title {
 }
 
 @media all and (max-width: 767px) {
+  input[id="ch_my_nft"]:checked + label,
+  input[id="ch_my_nft_list"]:checked + label,
+  input[id="ch_activity"]:checked + label {
+    background: url("/public/images/inventory/bg_active-mob.png") no-repeat
+      center/contain;
+  }
   .main_card_section .card_section {
     grid-template-columns: repeat(2, 1fr);
+  }
+  input[id="ch_my_nft"] + label,
+  input[id="ch_my_nft"]:checked + label,
+  input[id="ch_my_nft_list"] + label,
+  input[id="ch_my_nft_list"]:checked + label,
+  input[id="ch_activity"] + label,
+  input[id="ch_activity"]:checked + label {
+    height: auto;
+    aspect-ratio: 160/27;
   }
 }

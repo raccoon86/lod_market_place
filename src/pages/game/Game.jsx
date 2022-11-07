@@ -304,7 +304,7 @@ const Game = () => {
                 onChange={(e) => checkHandler(e)}
                 defaultChecked={true}
               />
-              <label for="ch_game">
+              <label htmlFor="ch_game">
                 <div className="game_title">Game PLAY</div>
               </label>
 
@@ -316,7 +316,7 @@ const Game = () => {
                 value="account"
                 onChange={(e) => checkHandler(e)}
               />
-              <label for="ch_account">
+              <label htmlFor="ch_account">
                 <div className="account_title">Account</div>
               </label>
 
@@ -328,7 +328,7 @@ const Game = () => {
                 value="wallet"
                 onChange={(e) => checkHandler(e)}
               />
-              <label for="ch_wallet">
+              <label htmlFor="ch_wallet">
                 <div className="wallet_title">Wallet</div>
               </label>
             </div>

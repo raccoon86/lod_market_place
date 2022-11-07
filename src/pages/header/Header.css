@@ -21,7 +21,9 @@ body.active {
   z-index: 9999;
   color: #ffffff;
 }
-
+.menu_list {
+  cursor: pointer;
+}
 .logo {
   width: 189px;
   height: 65px;
@@ -59,6 +61,7 @@ body.active {
   white-space: normal;
   margin-right: 50px;
   color: rgba(255, 255, 255, 0.6);
+  cursor: auto;
 }
 
 .game {

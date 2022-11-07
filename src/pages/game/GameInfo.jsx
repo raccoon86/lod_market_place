@@ -10,13 +10,13 @@ export default function GameInfo() {
         <picture>
           <source
             media="(min-width:1180px )"
-            srcset="/images/game/info_pc.png"
+            srcSet="/images/game/info_pc.png"
           />
           <source
-            media="(max-width:420px )"
-            srcset="/images/game/info_mob.png"
+            media="(max-width:767px )"
+            srcSet="/images/game/info_mob.png"
           />
-          <img src="/images/game/info_pc.png" alt="" />
+          <img srcSet="/images/game/info_pc.png" alt="info_pc" />
         </picture>
       </div>
       <div className="how_to_play_title">

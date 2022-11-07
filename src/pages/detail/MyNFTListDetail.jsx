@@ -1,32 +1,34 @@
-import './MyNFTListDetail.css';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import "./MyNFTListDetail.css";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Modal from "../modal/CancelModal";
 
 function MyNFTListDetail() {
+  const navigator = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
 
-    const navigator = useNavigate()
-    const [modalOpen, setModalOpen] = useState(false);
-  
-    const openModal = () => {
-      setModalOpen(true);
-    };
-    const closeModal = () => {
-      setModalOpen(false);
-    };
-  
-    const navToInventory = () => {
-      navigator("/inventory", {state : {"tab" : "my_nft_list"}});
-    }
+  const openModal = () => {
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const navToInventory = () => {
+    navigator("/inventory", { state: { tab: "my_nft_list" } });
+  };
   return (
-<div className="main">
+    <div className="main">
       <Header />
       <section>
         <div className="container">
           <span className="welcome_msg">Listed NFTs</span>
-          <span className="sub_msg">here You can check out the list and unlist it</span>
+          <span className="sub_msg">
+            here You can check out
+            <br className="mob_br" /> the list and unlist it
+          </span>
           <div className="detail_card_section">
             <div className="back_section" onClick={navToInventory}>
               <div className="back_image" />
@@ -55,8 +57,8 @@ function MyNFTListDetail() {
                 <div className="nft_listing_price_section">
                   <span className="price_title">Listing Price</span>
                   <div className="price_section">
-                    <div className='icon_coin'/>
-                    <div className='price'>2,000</div>
+                    <div className="icon_coin" />
+                    <div className="price">2,000</div>
                   </div>
                   <span className="price_info">
                     Marketplace will receive a 3% commission.
@@ -64,13 +66,16 @@ function MyNFTListDetail() {
                 </div>
                 <React.Fragment>
                   <div className="button_280">
-                    <div className="button_280_bg">
-                    </div>
-                    <div onClick={ openModal } className='button_280_body'>
-                      <span className='button_280_text'>Cancel sale</span>
+                    <div className="button_280_bg"></div>
+                    <div onClick={openModal} className="button_280_body">
+                      <span className="button_280_text">Cancel sale</span>
                     </div>
                   </div>
-                  <Modal open={modalOpen} close={closeModal} header="Modal heading"/>
+                  <Modal
+                    open={modalOpen}
+                    close={closeModal}
+                    header="Modal heading"
+                  />
                 </React.Fragment>
               </div>
             </div>
