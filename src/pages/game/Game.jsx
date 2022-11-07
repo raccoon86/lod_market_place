@@ -24,7 +24,7 @@ const Game = () => {
   };
 
   return (
-    <div className="main">
+    <div className="main gamebg">
       <Header cursor="game" getIsConnect={getIsConnect} />
       <div className="game_section">
         <div className="container">

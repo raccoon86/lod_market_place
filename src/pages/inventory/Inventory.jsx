@@ -35,7 +35,7 @@ export default function Inventory() {
   };
 
   return (
-    <div className="main">
+    <div className="main invenbg">
       <Header cursor="inventory" getIsConnect={getIsConnect} />
       <div className="inventory_container">
         <section>
