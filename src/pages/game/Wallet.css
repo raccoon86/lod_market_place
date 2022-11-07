@@ -14,16 +14,6 @@
   align-items: flex-start;
 }
 
-.info_section .wallet_info_section .wallet_connect_section {
-  display: flex;
-  width: 764px;
-  height: 330px;
-  margin-top: 25px;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-}
-
 .info_section .wallet_info_section .wallet_token_section {
   width: 100%;
   display: flex;

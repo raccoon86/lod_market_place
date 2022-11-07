@@ -13,9 +13,16 @@ function Footer() {
     document.location.href = "https://medium.com/@Global_LoD";
   };
 
+  const pageUp = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const pageWebSite = () => {
+    document.location.href = "https://lordofdragons.io/";
+  };
   return (
     <footer className="footer">
-      <a className="footer_logo"></a>
+      <a className="footer_logo" onClick={pageWebSite}></a>
       <div className="sns_section">
         <div className="company_info">SOTEM MOBILE Co., Ltd.</div>
         <div className="sns_link_section">
@@ -24,7 +31,7 @@ function Footer() {
           <a className="medium" onClick={goToMedium}></a>
         </div>
       </div>
-      <a className="btn_top"></a>
+      <a className="btn_top" onClick={pageUp}></a>
     </footer>
   );
 }

@@ -13,7 +13,21 @@ function Home() {
   const [page, setPage] = useState(1);
   const [selectedItem, setSelected] = useState("recent");
   const [checkedItems, setCheckedItems] = useState([]);
+  const [isConnect, setIsConnect] = useState(false);
   const offset = (page - 1) * limit;
+  const lowPrice = cardData.sort((a, b) => {
+    if (a.price < b.price) return 1;
+    return 0;
+  });
+  const highPrice = cardData.sort((a, b) => {
+    if (a.price > b.price) return 1;
+    return 0;
+  });
+
+  let totalVolume = 0;
+  const sumPrice = cardData.forEach(({ price }) => {
+    totalVolume += price;
+  });
   const navigator = useNavigate();
 
   useEffect(() => {
@@ -126,9 +140,12 @@ function Home() {
     navigator(`/detail/${id}`, { state: { id: id, sortType: checkedItems } });
   };
 
+  const getIsConnect = (isConnect) => {
+    setIsConnect(isConnect);
+  };
   return (
     <div className="main">
-      <Header cursor="marketplace" />
+      <Header cursor="marketplace" getIsConnect={getIsConnect} />
       <section>
         <div className="container">
           <span className="welcome_msg">
@@ -155,7 +172,7 @@ function Home() {
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Floor Price</span>
-                <span className="price">150 BUSD</span>
+                <span className="price">{lowPrice[0].price} BUSD</span>
               </div>
             </div>
             <div className="total_volume nft_info_content">
@@ -172,7 +189,7 @@ function Home() {
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Total Volume</span>
-                <span className="price">150 BUSD</span>
+                <span className="price">{totalVolume} BUSD</span>
               </div>
             </div>
             <div className="highest_sell_price nft_info_content">
@@ -189,7 +206,7 @@ function Home() {
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Highest Sell Price</span>
-                <span className="price">150 BUSD</span>
+                <span className="price">{highPrice[0].price} BUSD</span>
               </div>
             </div>
             <div className="total_listed_count nft_info_content">
@@ -206,7 +223,7 @@ function Home() {
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Total Listed Count</span>
-                <span className="price">150 BUSD</span>
+                <span className="price">{cardData.length}</span>
               </div>
             </div>
           </div>
@@ -335,7 +352,9 @@ function Home() {
             {/* 카드 섹션 */}
             <div className="main_card_section">
               <div className="sort_section">
-                <div className="sort_result">640 NFTs - Floor 340BUSD</div>
+                <div className="sort_result">
+                  {cardData.length} NFTs - Floor {lowPrice[0].price} BUSD
+                </div>
                 <div className="sort">
                   <span className="sort_title">Sort by:</span>
                   <select
@@ -350,8 +369,11 @@ function Home() {
                   </select>
                 </div>
               </div>
-              <div className="card_section">
+              <div id={posts.length === 0 && "empty"} className="card_section">
                 {/* {content} */}
+                {posts.length === 0 && (
+                  <div className="empty_list_text">NO ITMES TO DISPLAY</div>
+                )}
                 {posts.length !== 0 &&
                   posts
                     .slice(offset, offset + limit)
