@@ -72,7 +72,7 @@ function MyNFT({ isConnect }) {
       </div>
       <div className="pagination_section">
         <Pagination
-          total={cardData.length !== 0 ? cardData.length : 1}
+          total={cardData.length !== 0 && isConnect ? cardData.length : 1}
           limit={limit}
           page={page}
           setPage={setPage}

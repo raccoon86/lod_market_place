@@ -30,7 +30,6 @@ export default function Inventory() {
   };
 
   const getIsConnect = (isConnect) => {
-    console.log(isConnect);
     setIsConnect(isConnect);
   };
 
@@ -107,7 +106,7 @@ export default function Inventory() {
               </div>
               {tab === "my_nft" && <MyNFT isConnect={isConnect} />}
               {tab === "my_nft_list" && <ListNFT isConnect={isConnect} />}
-              {tab === "activity" && <ActivityNFT />}
+              {tab === "activity" && <ActivityNFT isConnect={isConnect} />}
             </div>
           </div>
         </section>

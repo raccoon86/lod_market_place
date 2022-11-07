@@ -7,7 +7,6 @@ import { cardData } from "../../data/Card";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Home() {
-  const location = useLocation();
   const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(12);
   const [page, setPage] = useState(1);

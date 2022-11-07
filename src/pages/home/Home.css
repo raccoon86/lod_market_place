@@ -732,6 +732,7 @@ select::-ms-expand {
 
 #empty{
   height: auto;
+  width: auto;
   margin-top: 35px;
   display: flex;
   justify-content: center;

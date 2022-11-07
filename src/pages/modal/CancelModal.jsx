@@ -15,13 +15,35 @@ const CancelModal = (props) => {
               <span className="close_icon"></span>
             </div>
             <div className="modal_body">
+              <div className="modal_imgs">
+                <img
+                  src="/images/modal/modal_obj.png"
+                  className="modal_obj-topright"
+                  alt="modal_obj"
+                />
+                <img
+                  src="/images/modal/modal_obj.png"
+                  className="modal_obj-topleft"
+                  alt="modal_obj"
+                />
+                <img
+                  src="/images/modal/modal_obj.png"
+                  className="modal_obj-bottomright"
+                  alt="modal_obj"
+                />
+                <img
+                  src="/images/modal/modal_obj.png"
+                  className="modal_obj-bottomleft"
+                  alt="modal_obj"
+                />
+              </div>
               <div className="modal_title">
                 Are you sure your’re canceling the sale?
               </div>
               <div className="button_400">
                 <div className="button_400_bg" />
                 <div onClick={close} className="button_400_body">
-                  <span className="button_280_text">Confirmed</span>
+                  <span className="button_400_text">Confirmed</span>
                 </div>
               </div>
             </div>

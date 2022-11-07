@@ -9,9 +9,7 @@ function Header({ cursor, getIsConnect }) {
   const [isConnect, setIsConnect] = useState(false);
   const navigator = useNavigate();
 
-  useEffect(() => {
-    console.log(isActive);
-  }, [isActive]);
+  useEffect(() => {}, [isActive]);
 
   const goToHome = () => {
     navigator("/");

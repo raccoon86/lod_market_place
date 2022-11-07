@@ -42,7 +42,7 @@
   justify-items: center;
 }
 
-.button_400 .button_400_body .button_280_text {
+.button_400 .button_400_body .button_400_text {
   font-family: "Noto Sans CJK KR";
   font-style: normal;
   font-weight: 700;
@@ -65,5 +65,38 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+}
+
+
+@media all and (max-width: 767px) {
+  .button_400 {
+    width: 210px;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+  .button_400 .button_400_bg {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    top: 2px;
+    background: #b2a170;
+    border-radius: 10px;
+  }
+  
+  .button_400 .button_400_body {
+    position: absolute;
+    width: 210px;
+    height: 38px;
+    background: #f1e4b6;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
   }
 }
