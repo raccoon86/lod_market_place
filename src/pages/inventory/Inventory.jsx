@@ -75,7 +75,7 @@ export default function Inventory() {
                   onChange={(e) => checkHandler(e)}
                   defaultChecked={tab === "my_nft" ? true : false}
                 />
-                <label for="ch_my_nft">
+                <label htmlFor="ch_my_nft">
                   <div className="my_nft_title">NFTs</div>
                 </label>
 
@@ -88,7 +88,7 @@ export default function Inventory() {
                   onChange={(e) => checkHandler(e)}
                   defaultChecked={tab === "my_nft_list" ? true : false}
                 />
-                <label for="ch_my_nft_list">
+                <label htmlFor="ch_my_nft_list">
                   <div className="my_nft_list_title">Listed NFTs</div>
                 </label>
 
@@ -101,7 +101,7 @@ export default function Inventory() {
                   onChange={(e) => checkHandler(e)}
                   defaultChecked={tab === "activity" ? true : false}
                 />
-                <label for="ch_activity">
+                <label htmlFor="ch_activity">
                   <div className="activity_title">Activity NFTs</div>
                 </label>
               </div>

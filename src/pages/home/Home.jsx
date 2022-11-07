@@ -179,13 +179,13 @@ function Home() {
               <picture>
                 <source
                   media="(min-width:1180px )"
-                  srcSet="/images/main/left_box.png"
+                  srcSet="/images/main/center_box.png"
                 />
                 <source
                   media="(max-width:1179px )"
-                  srcSet="/images/main/left_box.png"
+                  srcSet="/images/main/center_box.png"
                 />
-                <img srcSet="/images/main/left_box.png" alt="left_box" />
+                <img srcSet="/images/main/center_box.png" alt="center_box" />
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Total Volume</span>
@@ -196,13 +196,13 @@ function Home() {
               <picture>
                 <source
                   media="(min-width:1180px )"
-                  srcSet="/images/main/left_box.png"
+                  srcSet="/images/main/center_box.png"
                 />
                 <source
                   media="(max-width:1179px )"
-                  srcSet="/images/main/left_box.png"
+                  srcSet="/images/main/center_box.png"
                 />
-                <img srcSet="/images/main/left_box.png" alt="left_box" />
+                <img srcSet="/images/main/center_box.png" alt="center_box" />
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Highest Sell Price</span>
@@ -213,13 +213,13 @@ function Home() {
               <picture>
                 <source
                   media="(min-width:1180px )"
-                  srcSet="/images/main/left_box.png"
+                  srcSet="/images/main/right_box.png"
                 />
                 <source
                   media="(max-width:1179px )"
-                  srcSet="/images/main/left_box.png"
+                  srcSet="/images/main/right_box.png"
                 />
-                <img srcSet="/images/main/left_box.png" alt="left_box" />
+                <img srcSet="/images/main/right_box.png" alt="right_box" />
               </picture>
               <div className="nft_info_wrap">
                 <span className="title">Total Listed Count</span>

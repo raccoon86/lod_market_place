@@ -1,5 +1,4 @@
 .detail_card_section {
-  margin-top: 60px;
   width: 100%;
   height: auto;
   display: flex;
@@ -42,6 +41,7 @@
   background: url("/public/images/card/card_01.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .detail_character_info {
@@ -215,6 +215,7 @@
   height: 55px;
   display: flex;
   margin-top: 30px;
+  cursor: pointer;
 }
 
 .button_280 .button_280_bg {
@@ -242,7 +243,7 @@
 .button_280 .button_280_body .button_280_text {
   font-family: "Noto Sans CJK KR";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 22px;
   line-height: 33px;
 
@@ -252,6 +253,9 @@
   display: block;
 }
 @media all and (max-width: 1179px) {
+  .detail_card_section {
+    margin: 60px 0;
+  }
   .detail_card {
     flex-direction: column;
     height: auto;
@@ -260,6 +264,7 @@
   .character_image {
     height: 891px;
     width: 100%;
+    background-position: top;
   }
   .button_buy_section {
     justify-content: center;

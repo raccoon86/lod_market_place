@@ -61,11 +61,14 @@ img {
 .tab_br {
   display: none;
 }
+label {
+  cursor: pointer;
+}
 @media all and (max-width: 1179px) {
   .container {
     width: 100%;
     padding: 120px 20px 0 20px;
-    max-width: 728px;
+    max-width: 768px;
     min-height: 100vh;
     margin: 0 auto;
     position: relative;
