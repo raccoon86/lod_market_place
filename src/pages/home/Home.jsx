@@ -10,8 +10,14 @@ function Home() {
   const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(12);
   const [page, setPage] = useState(1);
-  const [selectedItem, setSelected] = useState("recent");
-  const [checkedItems, setCheckedItems] = useState([]);
+  const [selectedItem, setSelected] = useState([]);
+  const [checkedItems, setCheckedItems] = useState([
+    { sortType: "race", value: "b" },
+    { sortType: "rarity", value: "e" },
+    { sortType: "rarity", value: "sr" },
+    { sortType: "rarity", value: "r" },
+    { sortType: "rarity", value: "n" },
+  ]);
   const [isConnect, setIsConnect] = useState(false);
   const offset = (page - 1) * limit;
   const lowPrice = cardData.sort((a, b) => {
@@ -31,39 +37,41 @@ function Home() {
 
   useEffect(() => {
     // console.log(checkedItems);
-    setPostHandler(checkedItems);
+    setPostHandler();
   }, [checkedItems]);
 
   useEffect(() => {
-    orderByPosts(selectedItem);
+    // orderByPosts(selectedItem);
   }, [posts]);
 
   useEffect(() => {
     // console.log(posts);
-    // orderByPosts(selectedItem);
+    if (posts.length !== 0) {
+      orderByPosts();
+    }
   }, [selectedItem]);
 
-  const orderByPosts = (orderBy) => {
+  const orderByPosts = () => {
     var orderByData;
-    if (orderBy == "recent") {
+    if (selectedItem == "recent") {
       orderByData = posts.sort((a, b) => {
         if (new Date(a.created_at) < new Date(b.created_at)) return -1;
         if (new Date(a.created_at) > new Date(b.created_at)) return 1;
         return 0;
       });
-    } else if (orderBy == "oldest") {
+    } else if (selectedItem == "oldest") {
       orderByData = posts.sort((a, b) => {
         if (new Date(a.created_at) < new Date(b.created_at)) return 1;
         if (new Date(a.created_at) > new Date(b.created_at)) return -1;
         return 0;
       });
-    } else if (orderBy == "high") {
+    } else if (selectedItem == "high") {
       orderByData = posts.sort((a, b) => {
         if (a.price < b.price) return -1;
         if (a.price > b.price) return 1;
         return 0;
       });
-    } else if (orderBy == "low") {
+    } else if (selectedItem == "low") {
       orderByData = posts.sort((a, b) => {
         if (a.price < b.price) return 1;
         if (a.price > b.price) return -1;
@@ -87,7 +95,8 @@ function Home() {
     checkedItemHandler(sortType, target.value, target.checked);
   };
 
-  const setPostHandler = (checkedItems) => {
+  const setPostHandler = () => {
+    setPosts(cardData);
     var raceList = [];
     var resultList = [];
     if (checkedItems.length === 0) {
@@ -126,7 +135,6 @@ function Home() {
         });
       }
     }
-
     setPosts([...new Set(resultList)]);
   };
 
@@ -242,6 +250,7 @@ function Home() {
                       onChange={(e) => {
                         checkHandler(e, "race");
                       }}
+                      defaultChecked={true}
                     />
                     <label htmlFor="ch_beny">
                       <div className="beny_badge">
@@ -292,6 +301,7 @@ function Home() {
                       onChange={(e) => {
                         checkHandler(e, "rarity");
                       }}
+                      defaultChecked={true}
                     />
                     <label htmlFor="ch_epic">
                       <div className="epic_badge">
@@ -307,6 +317,7 @@ function Home() {
                       onChange={(e) => {
                         checkHandler(e, "rarity");
                       }}
+                      defaultChecked={true}
                     />
                     <label htmlFor="ch_sr">
                       <div className="sr_badge">
@@ -322,6 +333,7 @@ function Home() {
                       onChange={(e) => {
                         checkHandler(e, "rarity");
                       }}
+                      defaultChecked={true}
                     />
                     <label htmlFor="ch_r">
                       <div className="r_badge">
@@ -337,6 +349,7 @@ function Home() {
                       onChange={(e) => {
                         checkHandler(e, "rarity");
                       }}
+                      defaultChecked={true}
                     />
                     <label htmlFor="ch_n">
                       <div className="n_badge">
