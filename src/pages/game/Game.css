@@ -543,7 +543,6 @@ input[id="ch_wallet"]:checked + label .wallet_title {
   background: #1f2333;
   border-radius: 20px;
   padding: 12px 35px 35px 35px;
-  min-height: 746px;
 }
 
 .game_info_container .info_section .nft_msg {
