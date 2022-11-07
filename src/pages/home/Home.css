@@ -730,7 +730,7 @@ select::-ms-expand {
   min-height: 1008px;
 }
 
-#empty{
+#empty {
   height: auto;
   width: auto;
   margin-top: 35px;
@@ -738,7 +738,7 @@ select::-ms-expand {
   justify-content: center;
   justify-items: center;
   align-items: center;
-  min-height: 1008px;
+  min-height: 500px;
 }
 
 .empty_list_text {
@@ -784,7 +784,7 @@ select::-ms-expand {
   background-repeat: no-repeat;
   background-size: cover;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-start;
 }
 
@@ -1015,5 +1015,8 @@ select::-ms-expand {
   }
   .nft_info_content {
     width: 100%;
+  }
+  #empty {
+    min-height: 250px;
   }
 }
