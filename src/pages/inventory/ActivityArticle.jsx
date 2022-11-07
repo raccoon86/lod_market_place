@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 function ActivityArticle({ date, data }) {
   const list = Object.values(data);
@@ -145,46 +144,6 @@ function ActivityArticle({ date, data }) {
               )}
             </article>
           ))}
-
-        {/* <div className='first_activity_section'>
-            <span className='time'>15:30</span>
-            <span className='timeline'/>
-            <div className='activity_result_box'>
-                <div className='avatar'/>
-                <div className='result'>
-                    You have bought 1 item with ID <span className='focus_text'>#1154</span> from <span className='focus_text'>0x5d3..ddc28</span> for <span className='price'>0.11BNB</span>
-                </div>
-                <div className='btn_view'>
-                    <span>View transaction</span>
-                </div>
-            </div>
-        </div>
-        <div className='middle_activity_section'>
-            <span className='time'>15:30</span>
-            <span className='timeline'/>
-            <div className='activity_result_box'>
-                <div className='avatar'/>
-                <div className='result'>
-                    You have bought 1 item with ID <span className='focus_text'>#1154</span> from <span className='focus_text'>0x5d3..ddc28</span> for <span className='price'>0.11BNB</span>
-                </div>
-                <div className='btn_view'>
-                    <span>View transaction</span>
-                </div>
-            </div>
-        </div>
-        <div className='last_activity_section'>
-            <span className='time'>15:30</span>
-            <span className='timeline'/>
-            <div className='activity_result_box'>
-                <div className='avatar'/>
-                <div className='result'>
-                  You have bought 1 item with ID <span className='focus_text'>#1154</span> from <span className='focus_text'>0x5d3..ddc28</span> for <span className='price'>0.11BNB</span>
-                </div>
-                <div className='btn_view'>
-                    <span>View transaction</span>
-                </div>
-            </div>
-        </div> */}
       </div>
     </article>
   );

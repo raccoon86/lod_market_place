@@ -5,24 +5,21 @@ import ActivityArticle from "./ActivityArticle";
 import { TimelineData } from "../../data/Timeline";
 
 export default function ActivityNFT({ isConnect }) {
-  const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(3);
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
 
-  console.log(`타임라인 총 길이 : ${TimelineData.length}`);
   return (
     <div className="main_card_section">
       <div className="activity_section">
-        <span className="activity_title">Activity</span>
+        {isConnect && <span className="activity_title">Activity</span>}
+
         <article
           className="activity_article"
           id={
-            (isConnect === true &&
-              TimelineData.length === 0 &&
-              "activity_empty") ||
-            (TimelineData.length === 0 && "activity_empty") ||
-            (isConnect === false && "activity_empty")
+            (isConnect === true && TimelineData.length === 0 && "empty") ||
+            (TimelineData.length === 0 && "empty") ||
+            (isConnect === false && "empty")
           }
         >
           {isConnect === false && TimelineData.length === 0 && (

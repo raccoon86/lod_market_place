@@ -16,7 +16,6 @@ export default function Inventory() {
     location.state === null
       ? "my_nft"
       : location.state.tab !== null && location.state.tab;
-  console.log(`탭 : ${JSON.stringify(initTab)}`);
   const [tab, setTab] = useState(initTab);
   const [posts, setPosts] = useState([cardData]);
 

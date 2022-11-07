@@ -7,7 +7,6 @@ function MyNFT({ isConnect }) {
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
-  const [tab, setTab] = useState("game");
 
   const navigator = useNavigate();
 

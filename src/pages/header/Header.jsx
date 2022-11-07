@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
 function Header({ cursor, getIsConnect }) {
-  const [menu, setMenu] = useState("");
-  const [mobMenu, setMobMenu] = useState(true);
   const [isActive, setIsActive] = useState(false);
   const [isConnect, setIsConnect] = useState(false);
   const navigator = useNavigate();

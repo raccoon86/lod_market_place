@@ -55,16 +55,6 @@
   justify-items: flex-start;
 }
 
-#activity_empty {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
-}
-
 .activity_article .activity_date {
   margin-top: 35px;
   display: flex;

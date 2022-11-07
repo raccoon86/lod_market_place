@@ -4,13 +4,9 @@ import Pagination from "../pagination/Pagination";
 import { cardData } from "../../data/Card";
 
 export default function Account({ isConnect }) {
-  const [posts, setPosts] = useState();
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
-  const [Selected, setSelected] = useState("");
-  const [checkedItems, setCheckedItems] = useState([]);
   const offset = (page - 1) * limit;
-  const [tab, setTab] = useState("game");
 
   return (
     <div className="info_section">
