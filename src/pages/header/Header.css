@@ -104,7 +104,7 @@ body.active {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #F2E4B6;
+  background: #f2e4b6;
   border-radius: 10px;
   /* background: url("/public/images/menu/btn_wallet.png");
   background-repeat: no-repeat;
@@ -232,23 +232,45 @@ body.active {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #F2E4B6;
+    background: #f2e4b6;
     border-radius: 10px;
     /* background: url("/public/images/menu/btn_wallet.png");
     background-repeat: no-repeat;
     background-size: cover; */
   }
-  
+
   .m_wallet .ic_wallet {
     width: 24px;
     height: 24px;
     margin-right: 6px;
   }
-  
+
   .m_wallet .wallet_text {
     font-weight: 700;
     font-size: 22px;
     line-height: 33px;
     color: #472716;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .logo {
+    width: 154px;
+    height: 54px;
+  }
+  .marketplace,
+  .mobMenu_list {
+    font-size: 22px;
+  }
+  .m_wallet {
+    width: 180px;
+    height: 54px;
+    gap: 5px;
+  }
+  .m_wallet .ic_wallet {
+    margin-right: 0;
+  }
+  .m_wallet .wallet_text {
+    font-size: 15px;
   }
 }

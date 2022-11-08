@@ -70,15 +70,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+  .footer_logo {
+    width: 140px;
+    height: 48px;
+  }
   .sns_section {
     grid-column: 1/4;
     grid-row: 2/3;
   }
   .btn_top {
     grid-column: 3/4;
-  }
-  .footer_logo {
-    width: 140px;
-    height: 60px;
   }
 }

@@ -92,7 +92,6 @@ input[id="ch_wallet"]:checked + label {
   background: url("/public/images/inventory/bg_active.png") no-repeat
     center/cover;
   border-radius: 10px;
-  aspect-ratio: 9/2;
 }
 
 input[id="ch_account"] + label {
@@ -725,16 +724,13 @@ input[id="ch_wallet"]:checked + label .wallet_title {
 }
 input[id="ch_game"] + label,
 input[id="ch_wallet"] + label,
-input[id="ch_account"] + label {
-  aspect-ratio: 9/2;
-  height: 60px;
-}
+input[id="ch_account"] + label,
 input[id="ch_game"]:checked + label,
 input[id="ch_wallet"]:checked + label,
 input[id="ch_account"]:checked + label {
-  aspect-ratio: 9/2;
-  height: auto;
+  height: 60px;
 }
+
 @media all and (max-width: 1179px) {
   .main.gamebg {
     background: url("/public/images/game/bg_game.png") no-repeat top/contain;
@@ -757,7 +753,6 @@ input[id="ch_account"]:checked + label {
   input[id="ch_wallet"]:checked + label,
   input[id="ch_account"]:checked + label {
     height: 54px;
-    aspect-ratio: 115/27;
   }
 
   .game_info_container .menu_section {
@@ -821,15 +816,7 @@ input[id="ch_account"]:checked + label {
     background: url("/public/images/inventory/bg_active-mob.png") no-repeat
       center/contain;
   }
-  input[id="ch_game"] + label,
-  input[id="ch_wallet"] + label,
-  input[id="ch_account"] + label,
-  input[id="ch_game"]:checked + label,
-  input[id="ch_wallet"]:checked + label,
-  input[id="ch_account"]:checked + label {
-    height: auto;
-    aspect-ratio: 160/27;
-  }
+
   .game_info_container .menu_section {
     flex-direction: column;
   }

@@ -42,7 +42,8 @@ export default function Inventory() {
               <div>
                 <span className="my_nft_msg">My NFTs</span>
                 <span className="sub_msg">
-                  here You can check the items and sell it
+                  here You can check the items
+                  <br className="mob_br" /> and sell it
                 </span>
               </div>
             )}
@@ -51,7 +52,9 @@ export default function Inventory() {
               <div>
                 <span className="my_nft_msg">Listed NFTs</span>
                 <span className="sub_msg">
-                  here You can check out the list and unlist it
+                  here You can check out
+                  <br className="mob_br" />
+                  the list and unlist it
                 </span>
               </div>
             )}
