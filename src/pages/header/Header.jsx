@@ -21,6 +21,9 @@ function Header({ cursor, getIsConnect }) {
     navigator("/inventory");
   };
 
+  const goTodocument = () => {
+    document.location.href = "https://docs.lordofdragons.io/";
+  };
   const setActive = () => {
     setIsActive(!isActive);
   };
@@ -63,10 +66,15 @@ function Header({ cursor, getIsConnect }) {
       )}
       {cursor === "document" ? (
         <div className="cursor_section menu_list">
-          <div className="c_document">DOCUMENT</div> <p className="cursor" />{" "}
+          <div className="c_document" onClick={goTodocument}>
+            DOCUMENT
+          </div>{" "}
+          <p className="cursor" />{" "}
         </div>
       ) : (
-        <div className="document menu_list">DOCUMENT</div>
+        <div className="document menu_list" onClick={goTodocument}>
+          DOCUMENT
+        </div>
       )}
       {cursor === "inventory" ? (
         <div className="cursor_section menu_list">
