@@ -7,10 +7,10 @@ import { cardData } from "../../data/Card";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Home() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(cardData);
   const [limit, setLimit] = useState(12);
   const [page, setPage] = useState(1);
-  const [selectedItem, setSelected] = useState([]);
+  const [selectedItem, setSelected] = useState();
   const [checkedItems, setCheckedItems] = useState([
     { sortType: "race", value: "b" },
     { sortType: "rarity", value: "e" },
@@ -38,15 +38,19 @@ function Home() {
   useEffect(() => {
     // console.log(checkedItems);
     setPostHandler();
+    if (selectedItem) {
+      orderByPosts();
+    }
   }, [checkedItems]);
 
   useEffect(() => {
-    // orderByPosts(selectedItem);
+    if (!selectedItem) {
+      setSelected("recent");
+    }
   }, [posts]);
 
   useEffect(() => {
-    // console.log(posts);
-    if (posts.length !== 0) {
+    if (selectedItem) {
       orderByPosts();
     }
   }, [selectedItem]);
@@ -78,7 +82,7 @@ function Home() {
         return 0;
       });
     }
-    setPosts(orderByData);
+    setPosts([...new Set(orderByData)]);
   };
 
   const checkedItemHandler = (sortType, value, isChecked) => {
@@ -96,7 +100,8 @@ function Home() {
   };
 
   const setPostHandler = () => {
-    setPosts(cardData);
+    console.log("start setPost");
+    // setPosts(cardData);
     var raceList = [];
     var resultList = [];
     if (checkedItems.length === 0) {
@@ -139,8 +144,9 @@ function Home() {
   };
 
   const handleSelect = (e) => {
+    console.log(`여기 시작 : ${e.target.value}`);
     setSelected(e.target.value);
-    orderByPosts(e.target.value);
+    orderByPosts();
   };
 
   const goToDetailCard = (id) => {
@@ -371,6 +377,7 @@ function Home() {
                   <span className="sort_title">Sort by:</span>
                   <select
                     className="select"
+                    multiple={false}
                     onChange={handleSelect}
                     value={selectedItem}
                   >
