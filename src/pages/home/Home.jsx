@@ -7,7 +7,7 @@ import { cardData } from "../../data/Card";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Home() {
-  const [posts, setPosts] = useState(cardData);
+  const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(12);
   const [page, setPage] = useState(1);
   const [selectedItem, setSelected] = useState();
@@ -36,10 +36,8 @@ function Home() {
   const navigator = useNavigate();
 
   useEffect(() => {
-    // console.log(checkedItems);
-    setPostHandler();
     if (selectedItem) {
-      orderByPosts();
+      setPostHandler();
     }
   }, [checkedItems]);
 
@@ -51,32 +49,33 @@ function Home() {
 
   useEffect(() => {
     if (selectedItem) {
-      orderByPosts();
+      setPostHandler();
     }
   }, [selectedItem]);
 
-  const orderByPosts = () => {
+  const orderByPosts = (resultList) => {
     var orderByData;
-    if (selectedItem == "recent") {
-      orderByData = posts.sort((a, b) => {
+    if (!resultList) return;
+    if (selectedItem === "recent") {
+      orderByData = resultList.sort((a, b) => {
         if (new Date(a.created_at) < new Date(b.created_at)) return -1;
         if (new Date(a.created_at) > new Date(b.created_at)) return 1;
         return 0;
       });
-    } else if (selectedItem == "oldest") {
-      orderByData = posts.sort((a, b) => {
+    } else if (selectedItem === "oldest") {
+      orderByData = resultList.sort((a, b) => {
         if (new Date(a.created_at) < new Date(b.created_at)) return 1;
         if (new Date(a.created_at) > new Date(b.created_at)) return -1;
         return 0;
       });
-    } else if (selectedItem == "high") {
-      orderByData = posts.sort((a, b) => {
+    } else if (selectedItem === "high") {
+      orderByData = resultList.sort((a, b) => {
         if (a.price < b.price) return -1;
         if (a.price > b.price) return 1;
         return 0;
       });
-    } else if (selectedItem == "low") {
-      orderByData = posts.sort((a, b) => {
+    } else if (selectedItem === "low") {
+      orderByData = resultList.sort((a, b) => {
         if (a.price < b.price) return 1;
         if (a.price > b.price) return -1;
         return 0;
@@ -100,7 +99,6 @@ function Home() {
   };
 
   const setPostHandler = () => {
-    console.log("start setPost");
     // setPosts(cardData);
     var raceList = [];
     var resultList = [];
@@ -140,11 +138,10 @@ function Home() {
         });
       }
     }
-    setPosts([...new Set(resultList)]);
+    orderByPosts(resultList);
   };
 
   const handleSelect = (e) => {
-    console.log(`여기 시작 : ${e.target.value}`);
     setSelected(e.target.value);
     orderByPosts();
   };
