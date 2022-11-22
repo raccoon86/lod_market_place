@@ -62,7 +62,12 @@ body.active {
   color: rgba(255, 255, 255, 0.6);
   cursor: auto;
 }
-
+.mintingBtn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
 .game {
   width: 100px;
   margin-right: 50px;
@@ -166,6 +171,7 @@ body.active {
   }
   .menu_list {
     display: none;
+    cursor: pointer;
   }
   .mobMenu {
     display: block;

@@ -50,8 +50,8 @@ function Header({ cursor, getIsConnect }) {
           MARKETPLACE
         </div>
       )}
-      <a className="comming menu_list">COMMING SOON</a>
-      <a className="comming menu_list">COMMING SOON</a>
+      <a className="comming menu_list ">COMMING SOON</a>
+      <a className="comming menu_list ">COMMING SOON</a>
       {cursor === "game" ? (
         <div className="cursor_section menu_list">
           <div className="c_game" onClick={goToGame}>
